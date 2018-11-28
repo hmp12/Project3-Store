@@ -2,16 +2,21 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/hmp12/Project3-Store/master/public/img/gaugau.png"></p>
 
-## How to use
+## Installation
 <a href="https://getcomposer.org/">Install Composer</a>
   
-<p>Pull this project to public server folder.</p>
-Use the package manager [Composer](https://getcomposer.org/) to install required library.
+<p>Clone this project to public server folder.</p>
+```bash
+git clone https://github.com/hmp12/project3-store.git
+```
 
+<p>Use the package manager Composer to install required library.</p>
 ```bash
 composer install --no-dev
 ```
+
 <p>Config database connection in .env.example and rename to .env.</p>
+
 <p>Import data from database.sql.example into database.</p>
 
 
