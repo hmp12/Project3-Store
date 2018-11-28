@@ -12,9 +12,14 @@
 		</div>
 	</div>
 
-	<h1>Add product</h1>
+
+	@if (!empty($id))
+		<h1>Edit product</h1>
+		<a href="./{{ $id }}/subproduct"><button class="button">SubProduct</button></a>
+	@else
+		<h1>Add product</h1>
+	@endif
 	<button class="button" value="product" id="back">Back</button>
-	<a href="./{{ $id }}/subproduct"><button class="button">SubProduct</button></a>
 	<form action="" enctype="multipart/form-data" method="post">
 		@csrf
 		<div class="container">
@@ -107,6 +112,10 @@
 				</tr>
 			</table>
 		</div>
-		<input type="submit" value="Add" class="button">
+		@if (!empty($id))
+			<input type="submit" value="Update" class="button">
+		@else
+			<input type="submit" value="Add" class="button">
+		@endif
 	</form>
 </div>
