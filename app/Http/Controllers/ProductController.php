@@ -171,7 +171,6 @@
                 $connect = $product->connect;
                 $color = $product->color;
                 $weight = $product->weight;
-
             }
             else {
                 return "Product is not exist";

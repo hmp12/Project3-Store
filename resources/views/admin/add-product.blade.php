@@ -47,13 +47,15 @@
 			</div>
 			<div class="left">
 				<p>Images</p>
-				<img src="{{ (isset($photos)) ? url('/').'/'.$photos[0]->url : url('/').'/img/default.png' }}" height="220px" class="block" id="pre_img">	
-					@if (!empty($photos))
-						@foreach ($photos as $photo)
-							<input type="text" name="imgIds[]" value="{{ $photo->id }}" class="hidden cover">
-							<img src="{{ url('/').'/'.$photo->url }}" height="100px" class="pre_img">
-						@endforeach
-					@endif
+				@if (count($photos) > 0)
+					<img src="{{ url('/').'/'.$photos[0]->url }}" height="220px" class="block" id="pre_img">
+					@foreach ($photos as $photo)
+						<input type="text" name="imgIds[]" value="{{ $photo->id }}" class="hidden cover">
+						<img src="{{ url('/').'/'.$photo->url }}" height="100px" class="pre_img">
+					@endforeach
+				@else
+					<img src="{{ url('/').'/img/default.png' }}" height="220px" class="block" id="pre_img">	
+				@endif
 				<div>
 					<input type="button" value="Choose" class="button" id="ch_img">
 					<input type="button" value="Remove" class="button" id="remove">

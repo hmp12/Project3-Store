@@ -5,8 +5,14 @@
 
 	$photos = $product->photos;
 	$img_urls = array();
-	foreach ($photos as $photo) {
-		$img_urls[] = $photo->url;
+
+	if (count($photos) > 0) {
+		foreach ($photos as $photo) {
+			$img_urls[] = $photo->url;
+		}
+	}
+	else {
+		$img_urls[0] = 'img/default.png';
 	}
 @endphp
 <script type="text/javascript">
@@ -53,9 +59,9 @@
 		<div class="container">
 			<div class="images">
 				<img src="{{ url('/') }}/public/{{ $img_urls[0] }}" width="80%" class="block image">
-					@foreach ($img_urls as $img_url)
-						<img src="{{ url('/') }}/public/{{ $img_url }}" width="15%" class="img">
-					@endforeach
+				@foreach ($img_urls as $img_url)
+					<img src="{{ url('/') }}/public/{{ $img_url }}" width="15%" class="img">
+				@endforeach
 			</div>
 			<div class="info">
 				<h1>{{ $name }}</h1>
