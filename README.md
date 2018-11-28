@@ -18,7 +18,16 @@ composer install --no-dev
 ```
 
 <p>Config database connection in .env.example and rename to .env.</p>
-<br/>
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+
 <p>Import data from database.sql.example into database.</p>
 
 
