@@ -1,8 +1,10 @@
 # Project3-Store
 
+<p align="center"><img src="https://raw.githubusercontent.com/hmp12/Project3-Store/master/public/img/gaugau.png"></p>
+
+## How to use
 <p>Config database connection in .env.example and rename to .env</p>
 <p>Import data from database.sql.example into database</p>
-
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
