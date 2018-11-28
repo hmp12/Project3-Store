@@ -30,7 +30,7 @@
 				<input type="number" value="0{{ (isset($user)) ? $user->phone : ''}}" class="inline text" id="phone">
 			</div>
 			<h4>Số lượng</h4>
-			<img src="{{ url('/') }}/file?url={{ $img_urls[0] }}" height="100px" class="left image">
+			<img src="{{ url('/') }}/public/{{ $img_urls[0] }}" height="100px" class="left image">
 			<div class="left">
 				<p>{{ $name }}</p>
 			</div>
@@ -52,9 +52,9 @@
 	<div class="item-page">
 		<div class="container">
 			<div class="images">
-				<img src="{{ url('/') }}/file?url={{ $img_urls[0] }}" width="80%" class="block image">
+				<img src="{{ url('/') }}/public/{{ $img_urls[0] }}" width="80%" class="block image">
 					@foreach ($img_urls as $img_url)
-						<img src="{{ url('/') }}/file?url={{ $img_url }}" width="15%" class="img">
+						<img src="{{ url('/') }}/public/{{ $img_url }}" width="15%" class="img">
 					@endforeach
 			</div>
 			<div class="info">

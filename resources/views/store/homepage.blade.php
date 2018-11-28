@@ -4,7 +4,7 @@
 		@foreach ($banners as $banner) {
 			@php
 				$imgUrl = $banner->photo->url;
-				$img = './file?url='.$imgUrl;
+				$img = url('/').'/public/'.$imgUrl;
 			@endphp
 			<div class=banner>
 				<a href="{{ $banner['url'] }}"><img src="{{ $img }}"></a>

@@ -17,7 +17,7 @@
 				<div class="img_box">
 					<input type="checkbox" value="{{ $photo->id }}">
 					<label class="round-check"></label>
-					<img src="{{ url('/') }}/file?url={{ $photo->url }}" class="image">
+					<img src="{{ url('/') }}/public/{{ $photo->url }}" class="image">
 				</div>
 		@endforeach
 </div>
