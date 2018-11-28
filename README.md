@@ -3,8 +3,14 @@
 <p align="center"><img src="https://raw.githubusercontent.com/hmp12/Project3-Store/master/public/img/gaugau.png"></p>
 
 ## How to use
-<p>Create new Laravel project.</p>
-<p>Pull this project to new Laravel project folder.</p>
+<a href="https://getcomposer.org/">Install Composer</a>
+  
+<p>Pull this project to public server folder.</p>
+Use the package manager [Composer](https://getcomposer.org/) to install required library.
+
+```bash
+composer install --no-dev
+```
 <p>Config database connection in .env.example and rename to .env.</p>
 <p>Import data from database.sql.example into database.</p>
 
