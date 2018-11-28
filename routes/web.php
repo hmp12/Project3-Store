@@ -80,6 +80,3 @@ Route::post('/store/cart/add', 'StoreController@addCart');
 Route::get('/store/chatbot', 'StoreController@index');
 
 Route::post('/store/product-filter', 'ProductController@getProductFilter');
-Route::get('/store/product-filter', 'ProductController@getProductFilter');
-
-

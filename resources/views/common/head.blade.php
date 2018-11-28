@@ -1,5 +1,5 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/favicon.ico') }}?v=3">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/froala_editor.pkgd.min.css') }}"/>
