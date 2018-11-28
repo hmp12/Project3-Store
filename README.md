@@ -2,9 +2,32 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/hmp12/Project3-Store/master/public/img/gaugau.png"></p>
 
-## How to use
-<p>Pull project to root public folder in web server.</p>
+## Installation
+<a href="https://getcomposer.org/">Install Composer</a>
+  
+<p>Clone this project to public server folder.</p>
+
+```bash
+git clone https://github.com/hmp12/project3-store.git
+```
+
+<p>Use the package manager Composer to install required dependencies.</p>
+
+```bash
+composer install --no-dev
+```
+
 <p>Config database connection in .env.example and rename to .env.</p>
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+
 <p>Import data from database.sql.example into database.</p>
 
 
