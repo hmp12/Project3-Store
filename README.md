@@ -6,11 +6,13 @@
 <a href="https://getcomposer.org/">Install Composer</a>
   
 <p>Clone this project to public server folder.</p>
+
 ```bash
 git clone https://github.com/hmp12/project3-store.git
 ```
 
 <p>Use the package manager Composer to install required library.</p>
+
 ```bash
 composer install --no-dev
 ```
