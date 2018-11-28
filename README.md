@@ -28,7 +28,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-<p>Import data from database.sql.example into database.</p>
+<p>Import data example from database.sql into database.</p>
 
 
 
