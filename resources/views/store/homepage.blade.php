@@ -70,7 +70,7 @@
 
 					@endphp
 					<div class="item-box">
-						<img src="{{ url('/') }}/file?url={{ isset($imgUrls[0]) ? $imgUrls[0] : '' }}" class="image">
+						<img src="{{ url('/') }}/public/{{ isset($imgUrls[0]) ? $imgUrls[0] : '' }}" class="image">
 						<div class="info">
 							<a href="store/product/{{ $product->id }}">
 								<p>{{ $product['name'] }}</p>
