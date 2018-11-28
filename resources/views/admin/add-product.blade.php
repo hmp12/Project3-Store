@@ -90,7 +90,7 @@
 					<th><i class="fa fa-microchip"></th>
 					<th><input type="text" name="ram" value="{{ (isset($ram)) ? $ram : '' }}" placeholder="RAM" class="text"></th>
 					<th><i class="fa fa-hdd-o"></th>
-					<th><input type="text" name="memory" value="{{ (isset($memory)) ? $memory : '' }}" placeholder="Storage" class="text"></th>
+					<th><input type="text" name="memory" value="{{ (isset($memory)) ? $memory : '' }}" placeholder="Memory" class="text"></th>
 				</tr>
 				<tr>
 					<th><i class="fa fa-folder"></th>
@@ -106,7 +106,7 @@
 				</tr>
 				<tr>
 					<th><i class="fa fa-diamond"></i></th>
-					<th><input type="text" name="material" value="{{ (isset($material)) ? $material : '' }}" placeholder="Material" class="text"></th>
+					<th><input type="text" name="color" value="{{ (isset($color)) ? $color : '' }}" placeholder="Color" class="text"></th>
 					<th><i class="fa fa-truck"></th>
 					<th><input type="text" name="weight" value="{{ (isset($weight)) ? $weight : '' }}" placeholder="Weight" class="text"></th>
 				</tr>

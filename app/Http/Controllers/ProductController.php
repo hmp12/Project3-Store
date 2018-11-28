@@ -5,6 +5,7 @@
     use App\Http\Controllers\Controller;
     use App\Models\Category;
     use App\Models\Product;
+    use App\Models\SubProduct;
     use App\Models\Photo;
     use View;
 
@@ -53,10 +54,11 @@
                 $sim = $request->sim;
                 $battery = $request->battery;
                 $connect = $request->connect;
-                $material = $request->material;
+                $color = $request->color;
                 $weight = $request->weight;
                 $imgIds = $request->imgIds;
 
+                $product = new Product();
                 $valid = True;
                 if (!empty($name)) {
                     $product->name = $name;
@@ -105,7 +107,6 @@
                 }
                 
                 if ($valid) {
-                    $product = new Product();
                     $product->display = $display;
                     $product->os = $os;
                     $product->fcam = $fcam;
@@ -118,13 +119,22 @@
                     $product->sim = $sim;
                     $product->battery = $battery;
                     $product->connect = $connect;
-                    $product->material = $material;
+                    $product->color = $color;
                     $product->weight = $weight;
                     $product->save();
                     
-                    foreach ($photos as $photo) {
-                        $product->photos()->save($photo);
+                    if (!empty($photos)) {
+                        foreach ($photos as $photo) {
+                            $product->photos()->save($photo);
+                        }
                     }
+
+                    $subProduct = new SubProduct();
+                    $subProduct->product_id = $product->id;
+                    $subProduct->price = $product->price;
+                    $subProduct->memory = $product->memory;
+                    $subProduct->color = $product->color;
+                    $subProduct->save();
                 }
             }
 
@@ -159,7 +169,7 @@
                 $sim = $product->sim;
                 $battery = $product->battery;
                 $connect = $product->connect;
-                $material = $product->material;
+                $color = $product->color;
                 $weight = $product->weight;
 
             }
@@ -185,7 +195,7 @@
                 $sim = $request->sim;
                 $battery = $request->battery;
                 $connect = $request->connect;
-                $material = $request->material;
+                $color = $request->color;
                 $weight = $request->weight;
                 $imgIds = $request->imgIds;
 
@@ -249,7 +259,7 @@
                     $product->sim = $sim;
                     $product->battery = $battery;
                     $product->connect = $connect;
-                    $product->material = $material;
+                    $product->color = $color;
                     $product->weight = $weight;
 
                     $product->save();
