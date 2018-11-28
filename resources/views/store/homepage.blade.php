@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-@include ('common.phone_filter')
+@include ('common.phone-filter')
 
 <div class="products">
 

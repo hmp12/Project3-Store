@@ -7,7 +7,6 @@
 	</head>	
 
 	<body>
-		@include ('common.top-bar')
 		<div class="login">
 			<div class="top_box">
 				<img src="{{ url('/') }}/img/gaugau.png" height="100%">
@@ -20,7 +19,7 @@
 				<h4>Password: </h4>
 				<input type="password" placeholder="Enter password" value="{{ (isset($pass)) ? $pass : ''}}" name="pass" id="pass">
 				<button type="submit" id="login_bt">Login</button>
-				<button type="button" onclick="location.href='signup.php'" id="signup_bt">Signup</button>
+				<button type="button" onclick="location.href='{{ url('/') }}/user/signup'" id="signup_bt">Signup</button>
 			</form>	
 			<div class="bottom_box">
 				<p class="inline">Sign in with: </p>

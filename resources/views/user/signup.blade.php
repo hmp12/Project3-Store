@@ -5,7 +5,6 @@
 	</head>
 
 	<body>
-		@include ('common.top-bar')
 		<div class="signup">
 			<form action="{{ action('UserController@signUp') }}" method="post" class="signup_box">
 				@csrf
