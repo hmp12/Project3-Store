@@ -13,7 +13,7 @@
 			}
 		@endphp
 		<tr onclick="window.location='store/product/{{ $product->id }}'">
-			<th><img height="50px" src="{{ url('/') }}/file?url={{ $img_url }}"></th>
+			<th><img height="50px" src="{{ url('/') }}/public/{{ $img_url }}"></th>
 			<th>{{ $product->name }}</th>
 			<th><button value="{{ $product->id }}" class="sbutton compare"><i class="fa fa-columns"></i></button></th>
 		</tr>

@@ -313,8 +313,14 @@
             if (!empty($request->os)) {
                 $os = $request->os;
             }
+            else {
+                $os = '';
+            }
             if (!empty($request->display)) {
                 $display = $request->display;
+            }
+            else {
+                $display = '';
             }
             if (!empty($request->ram)) {
                 $ram = $request->ram;
