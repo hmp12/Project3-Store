@@ -11,14 +11,14 @@
 git clone https://github.com/hmp12/project3-store.git
 ```
 
-<p>Use the package manager Composer to install required library.</p>
+<p>Use the package manager Composer to install required dependencies.</p>
 
 ```bash
 composer install --no-dev
 ```
 
 <p>Config database connection in .env.example and rename to .env.</p>
-
+<br/>
 <p>Import data from database.sql.example into database.</p>
 
 
