@@ -37,20 +37,23 @@ $(document).ready(function() {
 		quanlity = parseInt($('#quanlity').val());
 		var username = $('#username').val();
 		var phone = $('#phone').val();
-		$.ajax({
-			url: public_path + "/store/cart/add",
-			type: 'POST',
-			data: {
-				productId: productId,
-				quanlity: quanlity,
-			},
-			success: function(data) {
-				$('.error').html(data);
-				$('.modal').hide();
-				update_user();
-				update_cart();
-			}
-		});
+		if (subProductId > 0) {
+			$.ajax({
+				url: public_path + "/store/cart/add",
+				type: 'POST',
+				data: {
+					productId: productId,
+					subProductId: subProductId,
+					quanlity: quanlity,
+				},
+				success: function(data) {
+					$('.error').html(data);
+					$('.modal').hide();
+					update_user();
+					update_cart();
+				}
+			});
+		}
 	});
 
 	$('.compare').click(function() {
@@ -80,9 +83,11 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 				if (data == '') {
+					subProductId = 0;
 					$('.price').text('Không còn hàng');
 				}
 				else {
+					subProductId = data['id'];
 					$('.price').text(data['price'] + 'đ');
 				}
 			}
@@ -106,9 +111,11 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 				if (data == '') {
+					subProductId = 0;
 					$('.price').text('Không còn hàng');
 				}
 				else {
+					subProductId = data['id'];
 					$('.price').text(data['price'] + 'đ');
 				}
 			}

@@ -12,8 +12,8 @@
             return $this->belongsTo(User::Class);
         }
 
-        public function product() {
-            return $this->belongsTo(Product::Class);
+        public function subProduct() {
+            return $this->belongsTo(SubProduct::Class, 'subproduct_id');
         }
     }
     

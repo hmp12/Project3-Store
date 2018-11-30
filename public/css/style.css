@@ -452,7 +452,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	height: auto;
 	display: none;
 	position: absolute;
-	padding: 0 25px;
+	padding: 0 5px;
 	border: 1px solid #f1f1f1;
 	border-top: 1px solid white;
 	border-bottom-left-radius: 25px;

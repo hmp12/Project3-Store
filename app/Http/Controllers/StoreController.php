@@ -32,6 +32,9 @@
                 $user = User::find($userId);
                 $carts = $user->carts;
             }
+            else {
+                $carts = null;
+            }
 
             $view = View::make('store/cart', ['carts' => $carts]);
             return $view;
@@ -41,7 +44,8 @@
             if ($request->session()->has('user')) {
                 $cart = new Cart();
                 $cart->user_id = $request->session()->get('user')->id;
-                $cart->product_id = $request->productId;
+                // $cart->product_id = $request->productId;
+                $cart->subProduct_id = $request->subProductId;
                 $cart->quanlity = $request->quanlity;
                 $cart->save();
             }

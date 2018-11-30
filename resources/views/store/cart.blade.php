@@ -3,9 +3,10 @@
 	<table>
 	@foreach ($carts as $cart)
 		@php
-			$product = $cart->product;
+			$subProduct = $cart->subProduct;
+			$product = $subProduct->product;
 			
-			$price = number_format($product->price);
+			$price = number_format($subProduct->price);
 
 			$photos = $product->photos;
 			$imgUrls = array();
@@ -14,8 +15,8 @@
 			}
 		@endphp
 		<tr>
-			<th><img height="50px" src="{{ url('/') }}/file?url={{ isset($imgUrls[0]) ? $imgUrls[0] : '' }}"></th>
-			<th>{{ $product->name }}</th>
+			<th><img height="50px" src="{{ url('/') }}/public/{{ isset($imgUrls[0]) ? $imgUrls[0] : '' }}"></th>
+			<th>{{ $product->name.' '.$subProduct->memory }}</th>
 			<th>x{{ $cart->quanlity }}</th>
 			<th class="price">{{ $price }}đ</th>
 			<th><button value="{{ $cart->id }}" class="sbutton delete"><i class="fa fa-times"></i></button></th>
