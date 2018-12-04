@@ -23,7 +23,7 @@
 					<p>Gender</p>
 					<input type="radio" name="gender" {{ (isset($gender) && $gender=="male") ? 'checked' : ''}} value="male">Male
 					<input type="radio" name="gender" {{ (isset($gender) && $gender=="female") ? 'checked' : ''}} value="female">Female
-					<button type="submit" class="btn btn-primary float-right" id="signup_bt">Signup</button>
+					<button type="submit" class="btn btn-primary btn-lg float-right" id="signup_bt">Signup</button>
 				</form>
 			</div>	
 		</div>		

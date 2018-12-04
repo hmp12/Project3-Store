@@ -50,10 +50,10 @@
 <div class="products">
 
 	@foreach ($categories as $cate)
-		<div class="container">
-			<div id="{{ $cate['url'] }}">
-				<h1>{{ $cate['label'] }}</h1>
-			</div>
+		<div id="{{ $cate['url'] }}">
+			<h1>{{ $cate['label'] }}</h1>
+		</div>
+		<div class="row">
 			@php
 				$products = $cate->products;
 			@endphp

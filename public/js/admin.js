@@ -69,13 +69,13 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('.sbutton.edit').click(function() {
+	$('.edit').click(function() {
 		var id = [];
 		id = $(this).val();
 		location.replace(public_path + "/admin/" + $('#add').val() + '/edit/' + id);
 	});
 
-	$('.sbutton.delete').click(function() {
+	$('.delete').click(function() {
 		$confirm = confirm("Are you sure to delete this " + tab + "?");
 		if ($confirm) {
 			var id = [];

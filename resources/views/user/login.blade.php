@@ -17,8 +17,8 @@
 					<input type="text" class="form-control" placeholder="Enter user name" value="{{ (isset($username)) ? $username : ''}}" name="username" id="usr">
 					<p>Password: </p>
 					<input type="password" class="form-control" placeholder="Enter password" value="{{ (isset($pass)) ? $pass : ''}}" name="pass" id="pass">
-					<button type="submit" class="btn btn-success float-right" id="login_bt">Login</button>
-					<button type="button" class="btn btn-primary float-right" onclick="location.href='{{ url('/') }}/user/signup'" id="signup_bt">Signup</button>
+					<button type="submit" class="btn btn-success btn-lg float-right" id="login_bt">Login</button>
+					<button type="button" class="btn btn-primary btn-lg float-right" onclick="location.href='{{ url('/') }}/user/signup'" id="signup_bt">Signup</button>
 				</form>
 			</div>			
 		</div>

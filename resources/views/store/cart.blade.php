@@ -19,11 +19,11 @@
 			<th>{{ $product->name.' '.$subProduct->memory }}</th>
 			<th>x{{ $cart->quanlity }}</th>
 			<th class="price">{{ $price }}đ</th>
-			<th><button value="{{ $cart->id }}" class="sbutton delete"><i class="fa fa-times"></i></button></th>
+			<th><button value="{{ $cart->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-times"></i></button></th>
 		</tr>
 	@endforeach
 	</table>
-	<a href="{{ url('/') }}/store/purchase"><button class="button">Thanh toán</button></a>
+	<a href="{{ url('/') }}/store/purchase"><button class="btn btn-primary btn-lg">Purchase</button></a>
 @else
 	<span class="price">Không có sản phẩm trong giỏ hàng</span>
 @endif

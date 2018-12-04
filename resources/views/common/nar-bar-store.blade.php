@@ -1,11 +1,11 @@
 <div class="nar-bar">
 	<div class="blur-background"></div>
-	<ul class="left">
+	<ul class="float-left">
 		<li id="hide-side"><i class="fa fa-bars"></i></li>
 		<li id="logo"><a href="{{ url('/') }}/"><img height="50px" width="150px" src="{{ url('/') }}/img/gaugau4.png"></a></li>
 	</ul>
 
-	<ul class="right">
+	<ul class="float-right">
 		<li id="hide-top"><i class="fa fa-chevron-up"></i></li>
 		<li id="show-top"><i class="fa fa-chevron-down"></i></li>
 		<li id="user">
@@ -30,8 +30,8 @@
 			<div class="dropdown">
 			</div>
 		</li>
-		<li  id="search">
-			<input type="text" name="search" class="text">
+		<li class="pt-2" id="search">
+			<input type="text" name="search" class="form-control float-right">
 			<div class="dropdown">
 			</div>
 		</li>

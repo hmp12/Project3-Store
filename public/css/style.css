@@ -88,10 +88,10 @@ input:focus, button:focus, select:focus {
 	overflow: auto;
 } */
 .float-left {
-	float: left;
+	margin-right: 10px;
 }
 .float-right {
-	float: right;
+	margin-left: 10px;
 }
 input[type="checkbox"] {
 	height: 15px;
@@ -148,37 +148,18 @@ input[type="checkbox"]:checked ~ .round-check:after {
 .table th {
 	max-width: 200px;
 }
-.text {
-	height: 40px;
-	width: 500px;
-	border-radius: 10px;
-	padding-left: 15px;
-}
+
 .med {
 	width: 248px;;
 }
-.text:focus {
-	background-color: #fafafa;
-}
 
-.btn {
+.btn-lg {
 	border-radius: 10px;
 	margin-top: 20px;
-	margin-left: 10px;
-	height: 45px;
-	width: 100px;
+	height: 50px;
+	width: 120px;
 }
 
-.sbutton {
-	height: 30px;
-	width: 30px;
-	border-radius: 5px;
-}
-.delete{
-	background-color: #9f0000;
-	color: white;
-	z-index: 99;
-}
 .textarea {
 	height: auto;
 	min-width: 500px;
@@ -223,13 +204,26 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	position: absolute;
 	right: 0;
 }
-.bootstrap-tagsinput {
-	width: 500px;
-	height: 40px;
-	border: 0;
-	border-radius: 10px;
-	padding: 9px 10px;
+
+.form-control {
+	border-radius: .85rem;
 }
+
+.bootstrap-tagsinput {
+	display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .85rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
 .label-info {
 	background-color: #354458;
 	border-radius: 5px;
@@ -408,7 +402,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 
 .nar-bar #search input{
 	width: 100px;
-	height: 80%;
+	height: 90%;
 	color: rgba(0, 0, 0, 0);
 	padding-left: 35px;
 	background: #ffffff url(../img/search.svg) no-repeat center;

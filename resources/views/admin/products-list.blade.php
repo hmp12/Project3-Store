@@ -1,9 +1,9 @@
 <div class="products">
 	<h1>Products</h1>
 	<div>
-		<button class="button" value="product" id="add"><i class="fa fa-plus"></i>Add</button>
-		<button class="button" id="reload"><i class="fa fa-refresh"></i>Reload</button>
-		<button class="button delete" id="delete"><i class="fa fa-trash"></i>Delete</button>
+		<button class="btn btn-success btn-lg" value="product" id="add"><i class="fa fa-plus"></i> Add</button>
+		<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-refresh"></i> Reload</button>
+		<button class="btn btn-danger btn-lg" id="delete"><i class="fa fa-trash"></i> Delete</button>
 	</div>
 	<table class="table">
 		<tr>
@@ -26,8 +26,8 @@
 				<td>{{ $price }}đ</td>
 				<td>{{ $category }}</td>
 				<td>
-					<button value="{{ $product->id }}" class="sbutton edit"><i class="fa fa-pencil-square-o"></i></button>
-					<button value="{{ $product->id }}" class="sbutton delete"><i class="fa fa-trash"></i></button>
+					<button value="{{ $product->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-pencil-square-o"></i></button>
+					<button value="{{ $product->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></button>
 				</td>
 			</tr>
 		@endforeach
