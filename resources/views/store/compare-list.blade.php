@@ -1,6 +1,6 @@
 
 @if (empty($compareProducts[0]))
-	<span class="price">Không có sản phẩm để so sánh</span>
+	<span>Không có sản phẩm để so sánh</span>
 @else
 	<table>
 		@for ($i = 0; $i < 3; $i++)

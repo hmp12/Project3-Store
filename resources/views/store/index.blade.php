@@ -4,7 +4,6 @@
 		<title>Gâu Gâu Store</title>
 		@include ('common.head')
 		<script type="text/javascript" src="{{ asset('js/store.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('js/chatbot.js') }}"></script>
 	</head>
 
 	<body>

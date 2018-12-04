@@ -27,6 +27,8 @@ Route::post('/user/login', 'UserController@login');
 Route::get('/user/logout', 'UserController@logout');
 Route::get('/user/signup', 'UserController@signUp');
 Route::post('/user/signup', 'UserController@signUp');
+Route::get('/user/update', 'UserController@updateInfo');
+
 
 Route::get('/admin', function () {
     return redirect('/admin/dashboard');
