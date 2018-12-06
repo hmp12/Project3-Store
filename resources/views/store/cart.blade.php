@@ -23,8 +23,8 @@
 		</tr>
 	@endforeach
 	</table>
-	<a href="{{ url('/') }}/store/purchase"><button class="btn btn-primary btn-lg">Purchase</button></a>
+	<a><button class="btn btn-primary btn-lg" id="btn-purchase">Purchase</button></a>
 @else
-	<span class="price">Không có sản phẩm trong giỏ hàng</span>
+	<span>Không có sản phẩm trong giỏ hàng</span>
 @endif
 

@@ -22,7 +22,7 @@
 	var color = "{{ $subProducts[0]->color }}";
 </script>
 <div class="product">
-	<div class="modal">
+	<div class="modal add-cart">
 		<div class="modal-content">
 		<div class="modal-header">
 			<span class="close fa fa-times"></span>
@@ -50,7 +50,7 @@
 			</div>						
 		</div>
 		<div class="modal-footer">
-			<button class="button" id="add">Thêm</button>
+			<button class="button" id="btn-add-card">Thêm</button>
 		</div>
 	</div>
 </div>
@@ -80,7 +80,7 @@
 						@endforeach
 					</span></p>
 				</div>
-				<button class="cart-button"><h2><i class="fa fa-cart-arrow-down"></i> Giỏ hàng</h2></button>
+				<button class="cart-button" id="btn-cart"><h2><i class="fa fa-cart-arrow-down"></i> Giỏ hàng</h2></button>
 				<button value="{{ $id }}" class="compare-button compare"><h2><i class="fa fa-columns"></i> So sánh</h2></button>
 				<div class="spec">
 					<div class="head">

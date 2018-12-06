@@ -12,9 +12,24 @@ $(document).ready(function() {
 
 	var price = parseInt($('#price').text().replace(/,/g, ''));
 	var quanlity;
-	$('.cart-button').click(function() {
-		$('.modal').show();
+	$('#btn-cart').click(function() {
+		$('.modal .add-cart').show();
 		$('#quanlity').val('1');
+	});
+
+	$('#btn-purchase').click(function() {
+		$.ajax({
+			url: public_path + "/store/purchase",
+			type: 'POST',
+			data: {
+
+			},
+			success: function(data) {
+				$('.modal .purchase').html(data);
+				$('.modal .purchase').show();
+			}
+		});
+		
 	});
 
 	$('#plus').click(function() {
@@ -33,7 +48,7 @@ $(document).ready(function() {
 		}	
 	});
 
-	$('#add').click(function() {
+	$('#btn-add-cart').click(function() {
 		quanlity = parseInt($('#quanlity').val());
 		var username = $('#username').val();
 		var phone = $('#phone').val();

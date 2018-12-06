@@ -12,12 +12,13 @@
 		@include ('common.nar-bar-store')
 		<div class="store page">
 			@include ('common.side-bar-store')
-			<div class="content">
-				
+			<div class="content">				
 				<script type="text/javascript">
 					var user_id = "{{ isset($user) ? $user->id : 0 }}";
 					var tab = "{{ $tab }}";
 				</script>
+				<div class="modal purchase">
+				</div>
 				@include ('store.'.$tab)
 			</div>
 			
