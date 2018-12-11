@@ -5,6 +5,6 @@
 </head>
 <body>
 	<h1>Test</h1>
-	{{ $product->photos }}
+	{{ }}
 </body>
 </html>

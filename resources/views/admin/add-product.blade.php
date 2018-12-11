@@ -12,10 +12,10 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="edit-product">
 		@if (!empty($id))
 			<h1>Edit product</h1>
-			<a href="./{{ $id }}/subproduct"><button class="button">SubProduct</button></a>
+			<a href="./{{ $id }}/subproduct"><button class="btn btn-primary btn-lg">SubProduct</button></a>
 		@else
 			<h1>Add product</h1>
 		@endif
@@ -24,7 +24,7 @@
 			@csrf
 		
 			<div class="row">
-				<div class="col-6">
+				<div class="col-5">
 					<p>Name <span class="error">{{ (isset($nameError)) ? $nameError : '' }}</p>
 					<input type="text" class="form-control" width="900px" name="name" value="{{ (isset($name)) ? $name : '' }}" placeholder="Type name in here" class="text">
 					<p>Price <span class="error">{{ (isset($priceError)) ? $priceError : '' }}</p>
@@ -46,7 +46,7 @@
 					<p>Tags</p>
 					<input type="text" class="form-control" name="tags" placeholder="Input tags here" value="{{ (isset($tags)) ? $tags : '' }}" class="text" id="tags">
 				</div>
-				<div class="col-5">
+				<div class="col-6">
 					<p>Images</p>
 					@if (isset($photos) && count($photos) > 0)
 						<img src="{{ url('/').'/'.$photos[0]->url }}" height="220px" class="block" id="pre_img">

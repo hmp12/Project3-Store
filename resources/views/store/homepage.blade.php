@@ -72,7 +72,7 @@
 					<div class="item-box">
 						<img src="{{ url('/') }}/public/{{ isset($imgUrls[0]) ? $imgUrls[0] : '' }}" class="image">
 						<div class="info">
-							<a href="store/product/{{ $product->id }}">
+							<a href="{{ url('/') }}/store/product/{{ $product->id }}">
 								<p>{{ $product['name'] }}</p>
 								<h5 class="price">{{ $price }}đ</h5>
 								<div class="specs">

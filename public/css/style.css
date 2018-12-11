@@ -1223,10 +1223,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	color: black;
 }
 .item-page .images {
-	width: 40%;
-	background-color: white;
 	text-align: center;
-	float: left;
 }
 .images .image {
 	margin: 20px 10%;
@@ -1236,9 +1233,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 }
 
 .item-page .info {
-	width: 45%;
 	margin-left: 5%;
-	float: left;
 }
 .item-page .spec {
 	border-radius: 15px;

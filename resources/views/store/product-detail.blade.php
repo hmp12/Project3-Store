@@ -56,14 +56,14 @@
 </div>
 
 	<div class="item-page">
-		<div class="container">
-			<div class="images">
+		<div class="row">
+			<div class="images col-6">
 				<img src="{{ url('/') }}/public/{{ $img_urls[0] }}" width="80%" class="block image">
 				@foreach ($img_urls as $img_url)
 					<img src="{{ url('/') }}/public/{{ $img_url }}" width="15%" class="img">
 				@endforeach
 			</div>
-			<div class="info">
+			<div class="info col-5">
 				<h1>{{ $name }}</h1>
 				<h1 class="price">{{ $price }}đ</h1>
 				<div class="sub-product">
@@ -118,10 +118,12 @@
 		<div class="head">
 			<h1>Thông tin chi tiết</h1>
 		</div>
-		<div class="detail">
-			@php
-				echo $product->detail;
-			@endphp
+		<div class="row">
+			<div class="detail col-11">
+				@php
+					echo $product->detail;
+				@endphp
+			</div>
 		</div>
 	</div>
 </div>
