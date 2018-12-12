@@ -16,6 +16,10 @@
             return $this->hasMany(Order::Class);
         }
 
+        public function role() {
+            return $this->belongsTo(Role::Class);
+        }
+
         static function getUser($request, $username, $pass) {
             if (empty($username)) {
                 $request->session()->put('loginError', "Please enter your username");

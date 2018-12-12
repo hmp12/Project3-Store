@@ -7,6 +7,7 @@
     use Illuminate\Support\Facades\DB;
     use App\Http\Controllers\Controller;
     use App\Models\User;
+    use App\Models\Role;
 
     class UserController extends Controller {
         public function showUsers(Request $request) {
@@ -88,6 +89,7 @@
                 }
             }
 
+            $roles = Role::all();
             $data = get_defined_vars();
 
             $view = View::make('admin/index', $data);

@@ -27,7 +27,7 @@
 				<p>Password <span class="error">{{ (isset($passError)) ? $passError : '' }}</p>
 				<input type="text" class="form-control" name="pass" value="{{ (isset($pass)) ? $pass : '' }}" placeholder="Type password in here" class="text" id="pass">
 				<p>Role</p>
-				<select name="role" class="text">
+				<select name="role" class="form-control">
 					<option value="0" disabled selected hidden>Choose role here</option>
 					@foreach ($roles as $role)
 						<option value="{{ $role->id }}">{{ $role->title }}</option>
