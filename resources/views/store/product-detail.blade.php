@@ -23,34 +23,32 @@
 </script>
 <div class="product">
 	<div class="modal add-cart">
-		<div class="modal-content">
-		<div class="modal-header">
-			<span class="close fa fa-times"></span>
-		</div>
-		<div class="modal-body">
-			<h4>Khách hàng</h4>
-			<div class="user-info">
-				<p class="inline">Tên</p>
-				<input type="text" value="{{ (isset($user)) ? $user->fullname : ''}}" class="inline text" id="username">
-				<p class="inline">Số đt</p>
-				<input type="number" value="0{{ (isset($user)) ? $user->phone : ''}}" class="inline text" id="phone">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4>Thêm vào giỏ hàng</h4>
+					<span class="close fa fa-times"></span>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<img src="{{ url('/') }}/public/{{ $img_urls[0] }}" height="100px" class="left image">
+						<div class="col">
+							<p>{{ $name }}</p>
+						</div>
+						<div class="col quanlity">
+							<button class="btn btn-basic btn-sm" id="minus"><i class="fa fa-minus"></i></button>
+							<input type="number" id="quanlity">
+							<button class="btn btn-basic btn-sm" id="plus"><i class="fa fa-plus"></i></button>
+						</div>
+						<div class="col">
+							<p class="price"><span id="cart-price">{{ $price }}</span>đ</p>
+						</div>
+					</div>					
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success btn-lg" id="btn-add-card">Thêm</button>
+				</div>
 			</div>
-			<h4>Số lượng</h4>
-			<img src="{{ url('/') }}/public/{{ $img_urls[0] }}" height="100px" class="left image">
-			<div class="left">
-				<p>{{ $name }}</p>
-			</div>
-			<div class="left quanlity">
-				<button class="minus sbutton" id="minus"><i class="fa fa-minus"></i></button>
-				<input type="number" id="quanlity">
-				<button class="plus sbutton"><i class="fa fa-plus" id="plus"></i></button>
-			</div>
-			<div class="left">
-				<p class="price"><span id="price">{{ $price }}</span>đ</p>
-			</div>						
-		</div>
-		<div class="modal-footer">
-			<button class="button" id="btn-add-card">Thêm</button>
 		</div>
 	</div>
 </div>
@@ -65,11 +63,11 @@
 			</div>
 			<div class="info col-5">
 				<h1>{{ $name }}</h1>
-				<h1 class="price">{{ $price }}đ</h1>
+				<h1 class="price" id="product-price">{{ $price }}đ</h1>
 				<div class="sub-product">
 					<p>Bộ nhớ: <span>
 						@foreach ($memories as $memory)
-							<button class="memory-button" value="{{ $memory }}">{{ $memory }}</button>
+							<button class="btn btn-basic btn-md memory-button" value="{{ $memory }}">{{ $memory }}</button>
 						@endforeach
 					</span></p>
 					<p>Màu sắc: <span>
