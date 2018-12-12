@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 12, 2018 at 08:55 AM
+-- Generation Time: Dec 12, 2018 at 04:00 PM
 -- Server version: 5.6.37
 -- PHP Version: 7.1.8
 
@@ -23,173 +23,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aiml`
---
-
-CREATE TABLE IF NOT EXISTS `aiml` (
-  `id` int(11) unsigned NOT NULL,
-  `pattern` varchar(256) NOT NULL,
-  `thatpattern` varchar(256) DEFAULT NULL,
-  `template` varchar(256) NOT NULL,
-  `topic` varchar(256) DEFAULT NULL,
-  `filename` varchar(256) DEFAULT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=485 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `aiml`
---
-
-INSERT INTO `aiml` (`id`, `pattern`, `thatpattern`, `template`, `topic`, `filename`, `reg_date`) VALUES
-(376, '*', '', '<star/> lÃ  gÃ¬?', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(377, 'HELLO', '', 'Xin chÃ o <get name="name"/>, tÃ´i cÃ³ thá»ƒ giÃºp j cho báº¡n?', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(378, 'BYE', '', 'Cáº£m Æ¡n báº¡n Ä‘Ã£ sá»­ dá»¥ng dá»‹ch vá»¥ cá»§a chÃºng tÃ´i<get name="name"/>', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(379, 'I AM *', '', 'Xin chÃ o <star/>, tÃ´i cÃ³ thá»ƒ giÃºp j cho báº¡n?<set name="name"><star/></set>', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(380, 'MY NAME?', '', 'TÃªn báº¡n lÃ  <get name="name"/>', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(381, 'I LIKE *', '', 'TÃ´i cÅ©ng thÃ­ch <star/>', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(382, 'I LIKE * AND *', '', 'TÃ´i cÅ©ng thÃ­ch <star index="1"/> vÃ  <star index="2"/>', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(383, 'YEAR', '', '<date format="%Y"/>.', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(384, 'MONTH', '', '<date format="%B"/>.', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(385, 'DAY', '', '<date format="%A"/>.', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(386, 'TODAY', '', '<date format="%x"/>.', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(387, 'HOUR', '', '<date format="%I %p"/>.', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(388, 'WEATHER', '', '<div class="weather-mess"/><script type="text/javascript" src="../js/weather.js"/>', '', '../../aiml/basic.aiml', '2018-05-07 03:18:59'),
-(389, 'SHOP HELP', '', 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?<br/><button class="bot-bt">Sáº£n pháº©m</button><button class="bot-bt">Thanh toÃ¡n</button><button class="bot-bt">ThÃ´ng tin</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(390, 'Sáº¢N PHáº¨M', 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?', '<srai>Shop advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(391, 'THANH TOÃN', 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?', '<srai>Pay method</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(392, 'THÃ”NG TIN', 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?', 'Má»i thÃ´ng tin vá» cá»­a hÃ ng báº¡n cÃ³ thá»ƒ tÃ¬m tháº¥y á»Ÿ Ä‘Ã¢y', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(393, 'PAY METHOD', '', 'Báº¡n muá»‘n thanh toÃ¡n báº±ng phÆ°Æ¡ng thá»©c nÃ o?<br/><button class="bot-bt">Quá»‘c táº¿</button><button class="bot-bt">Ná»™i Ä‘á»‹a</button><button class="bot-bt">Trá»±c tiáº¿p</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(394, 'SHOP ADVICE', '', 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?<br/><button class="bot-bt">Phone</button><button class="bot-bt">Laptop</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(395, 'PHONE ADVICE', '', '<set name="type">phone</set><srai>branch</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(396, 'PHONE', 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?', '<srai>Phone advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(397, 'LAPTOP', 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?', '<set name="type">laptop</set>\n                <srai>branch</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(398, '*', 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?', 'ChÃºng tÃ´i khÃ´ng bÃ¡n <star/>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(399, 'BRANCH', '', 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?<br/><button class="bot-bt">Apple</button><button class="bot-bt">Samsung</button><button class="bot-bt">Bá» qua</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(400, 'APPLE', 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?', '<set name="branch">apple</set><srai>Price</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(401, 'SAMSUNG', 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?', '<set name="branch">samsung</set><srai>Price</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(402, 'Bá»Ž QUA', 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?', '<srai>Price</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(403, '*', 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?', '<set name="branch"><star/></set><srai>Price</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(404, 'NEED', '', 'Nhu cáº§u sá»­ dá»¥ng Ä‘iá»‡n thoáº¡i cá»§a báº¡n lÃ  j?<br/><button class="bot-bt">Chá»¥p áº£nh</button><button class="bot-bt">ChÆ¡i game</button><button class="bot-bt">LÆ°á»›t web</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(405, 'Bá»Ž QUA', 'Nhu cáº§u sá»­ dá»¥ng Ä‘iá»‡n thoáº¡i cá»§a báº¡n lÃ  j?', '<srai>Price</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(406, '*', 'Nhu cáº§u sá»­ dá»¥ng Ä‘iá»‡n thoáº¡i cá»§a báº¡n lÃ  j?', '<set name="need"><star/></set><srai>Price</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(407, 'PRICE', '', 'Sá»‘ tiá»n báº¡n cÃ³ thá»ƒ chi tráº£?<br/><button class="bot-bt">5 Tr</button><button class="bot-bt">15 Tr</button><button class="bot-bt">30 Tr</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(408, '* TR', 'Sá»‘ tiá»n báº¡n cÃ³ thá»ƒ chi tráº£?', '<set name="price"><star/>000000</set><srai>Size</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(409, '*', 'Sá»‘ tiá»n báº¡n cÃ³ thá»ƒ chi tráº£?', '<set name="price"><star/>000000</set><srai>Size</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(410, 'SIZE', '', 'Báº¡n muá»‘n kÃ­ch thÆ°á»›c mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?<br/><button class="bot-bt">Lá»›n</button><button class="bot-bt">Vá»«a</button><button class="bot-bt">KhÃ´ng quan trá»ng</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(411, 'BIG', 'Báº¡n muá»‘n kÃ­ch thÆ°á»›c mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?', '<set name="size">big</set><srai>Cam</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(412, 'SMALL', 'Báº¡n muá»‘n kÃ­ch thÆ°á»›c mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?', '<set name="size">small</set><srai>Cam</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(413, 'MEDIUM', 'Báº¡n muá»‘n kÃ­ch thÆ°á»›c mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?', '<set name="size">medium</set><srai>Cam</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(414, '*', 'Báº¡n muá»‘n kÃ­ch thÆ°á»›c mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?', '<srai>Cam</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:03'),
-(415, 'CAM', '', 'Báº¡n muá»‘n Camera cÃ³ Ä‘á»™ phÃ¢n giáº£i bao nhiÃªu?<br/><button class="bot-bt">15 MP</button><button class="bot-bt">12 MP</button><button class="bot-bt">8 MP</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(416, '* MP', 'Báº¡n muá»‘n Camera cÃ³ Ä‘á»™ phÃ¢n giáº£i bao nhiÃªu?', '<set name="cam"><star/></set><srai>Fcam</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(417, '*', 'Báº¡n muá»‘n Camera cÃ³ Ä‘á»™ phÃ¢n giáº£i bao nhiÃªu?', '<set name="cam"><star/></set><srai>Fcam</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(418, 'FCAM', '', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn selfie khÃ´ng?<br/><button class="bot-bt">CÃ³</button><button class="bot-bt">KhÃ´ng</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(419, 'CÃ“', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn selfie khÃ´ng?', '<set name="fcam">big</set><srai>Display</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(420, 'KHÃ”NG', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn selfie khÃ´ng?', '<set name="fcam">small</set><srai>Display</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(421, 'DISPLAY', '', 'Báº¡n muá»‘n Ä‘á»™ phÃ¢n giáº£i mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?<br/><button class="bot-bt">2K</button><button class="bot-bt">FHD</button><button class="bot-bt">HD</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(422, '*', 'Báº¡n muá»‘n Ä‘á»™ phÃ¢n giáº£i mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?', '<set name="display"><star/></set><srai>Pin</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(423, 'PIN', '', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn sá»­ Ä‘iá»‡n thoáº¡i liÃªn tá»¥c?<br/><button class="bot-bt">CÃ³</button><button class="bot-bt">KhÃ´ng</button><button class="bot-bt">BÃ¬nh thÆ°á»ng</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(424, 'CÃ“', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn sá»­ Ä‘iá»‡n thoáº¡i liÃªn tá»¥c?', '<set name="pin">big</set><srai>Ram</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(425, 'KHÃ”NG', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn sá»­ Ä‘iá»‡n thoáº¡i liÃªn tá»¥c?', '<set name="pin">small</set><srai>Ram</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(426, '*', 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn sá»­ Ä‘iá»‡n thoáº¡i liÃªn tá»¥c?', '<srai>Ram</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(427, 'RAM', '', 'Báº¡n muá»‘n dung lÆ°á»£ng ram bao nhiÃªu?<br/><button class="bot-bt">6 GB</button><button class="bot-bt">3 GB</button><button class="bot-bt">Bá» qua</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(428, 'Bá»Ž QUA', 'Báº¡n muá»‘n dung lÆ°á»£ng ram bao nhiÃªu?', '<srai>Show advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(429, '* GB', 'Báº¡n muá»‘n dung lÆ°á»£ng ram bao nhiÃªu?', '<set name="ram"><star/></set><srai>Show advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(430, '*', 'Báº¡n muá»‘n dung lÆ°á»£ng ram bao nhiÃªu?', '<set name="ram"><star/></set><srai>Show advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(431, 'USER INFO', '', 'Báº¡n cÃ³ thá»ƒ muá»‘n cung cáº¥p má»™t sá»‘ thÃ´ng tin cÃ¡ nhÃ¢n khÃ´ng?<br/><button class="bot-bt">CÃ³</button><button class="bot-bt">KhÃ´ng</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(432, 'CÃ“', 'Báº¡n cÃ³ thá»ƒ muá»‘n cung cáº¥p má»™t sá»‘ thÃ´ng tin cÃ¡ nhÃ¢n khÃ´ng?', '<srai>Gender</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(433, 'KHÃ”NG', 'Báº¡n cÃ³ thá»ƒ muá»‘n cung cáº¥p má»™t sá»‘ thÃ´ng tin cÃ¡ nhÃ¢n khÃ´ng?', '<srai>Show advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(434, 'GENDER', '', 'Báº¡n lÃ  Nam hay Ná»¯?<br/><button class="bot-bt">Nam</button><button class="bot-bt">Ná»¯</button>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(435, 'NAM', 'Báº¡n lÃ  Nam hay Ná»¯?', '<set name="gender">male</set><srai>Job</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(436, 'Ná»®', 'Báº¡n lÃ  Nam hay Ná»¯?', '<set name="gender">female</set><srai>Job</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(437, 'JOB', '', 'Báº¡n lÃ m nghá» j?<br/>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(438, 'Bá»Ž QUA', 'Báº¡n lÃ m nghá» j?', '<srai>Show advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(439, '*', 'Báº¡n lÃ m nghá» j?', '<set name="job"><star/></set><srai>Show advice</srai>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(440, 'SHOW ADVICE', '', '<system>show_advice</system>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(441, 'ADDRESS', '', '<system>Äá»‹a chá»‰ XXX</system>', 'shop help', '../../aiml/shop.aiml', '2018-05-07 03:19:04'),
-(442, 'CHÃ€O', '', '<srai>Hello</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(443, '* CHÃ€O *', '', '<srai>Hello</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(444, 'XIN CHÃ€O', '', '<srai>Hello</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(445, 'Táº M BIá»†T', '', '<srai>Bye</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(446, 'Káº¾T THÃšC', '', '<srai>Bye</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(447, 'THá»œI TIáº¾T', '', '<srai>Weather</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(448, '* THá»œI TIáº¾T', '', '<srai>Weather</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(449, 'THá»œI TIáº¾T *', '', '<srai>Weather</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(450, '* THá»œI TIáº¾T *', '', '<srai>Weather</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(451, 'NÄ‚M', '', '<srai>Year</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(452, 'THÃNG', '', '<srai>Month</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(453, 'NGÃ€Y', '', '<srai>Day</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(454, 'HÃ”M NAY', '', '<srai>Today</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(455, 'GIá»œ', '', '<srai>Hour</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(456, 'TÃŠN TÃ”I LÃ€ *', '', '<srai>I am *</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(457, 'TÃ”I TÃŠN LÃ€ *', '', '<srai>I am *</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(458, 'TÃ”I TÃŠN LÃ€ GÃŒ', '', '<srai>My name?</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(459, 'TÃŠN TÃ”I LÃ€ GÃŒ', '', '<srai>My name?</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(460, 'GIá»šI TÃNH', '', '<srai>Gender</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(461, 'NAM', '', '<srai>Male</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(462, 'Ná»®', '', '<srai>Female</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(463, '* TÆ¯ Váº¤N *', '', '<srai>Shop help</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(464, '* TÆ¯ Váº¤N', '', '<srai>Shop help</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(465, 'TÆ¯ Váº¤N *', '', '<srai>Shop help</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(466, 'TÆ¯ Váº¤N MUA HÃ€NG', '', '<srai>Shop advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(467, '* TÆ¯ Váº¤N MUA HÃ€NG *', '', '<srai>Shop advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(468, 'TÆ¯ Váº¤N ÄIá»†N THOáº I', '', '<srai>Phone advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(469, '* TÆ¯ Váº¤N ÄIá»†N THOáº I', '', '<srai>Phone advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(470, '* TÆ¯ Váº¤N ÄIá»†N THOáº I *', '', '<srai>Phone advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(471, 'ÄIá»†N THOáº I', '', '<srai>Phone</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(472, '* TR', '', '<srai>*Tr</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(473, 'Káº¾T QUáº¢', '', '<srai>show advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(474, '* Káº¾T QUáº¢ *', '', '<srai>show advice</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(475, '* Äá»ŠA CHá»ˆ *', '', '<srai>Address</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(476, '* TO *', '', '<srai>Big</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(477, '* TO', '', '<srai>Big</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(478, 'TO *', '', '<srai>Big</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(479, '* NHá»Ž *', '', '<srai>Small</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(480, 'NHá»Ž *', '', '<srai>Small</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(481, '* NHá»Ž', '', '<srai>Small</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(482, '* Vá»ªA *', '', '<srai>Medium</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(483, 'Vá»ªA *', '', '<srai>Medium</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08'),
-(484, '* Vá»ªA', '', '<srai>Medium</srai>', '', '../../aiml/srai.aiml', '2018-05-07 03:19:08');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `banner`
 --
 
 CREATE TABLE IF NOT EXISTS `banner` (
   `id` int(11) unsigned NOT NULL,
-  `img_url` varchar(10) NOT NULL,
+  `photo_id` varchar(10) NOT NULL,
   `url` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL,
+  `status` int(11) DEFAULT '1',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `banner`
 --
 
-INSERT INTO `banner` (`id`, `img_url`, `url`, `status`, `updated_at`, `created_at`) VALUES
-(1, '45', '?tab=product&v=5', 1, '2017-11-15 14:48:27', '0000-00-00 00:00:00'),
-(2, '48', '?tab=product&v=6', 1, '2017-11-15 14:48:27', '0000-00-00 00:00:00'),
-(3, '55', '?tab=product&v=7', 1, '2017-11-17 17:00:31', '0000-00-00 00:00:00'),
-(4, '160', '?tab=movie&v=1', 0, '2018-11-22 02:21:56', '0000-00-00 00:00:00'),
-(5, '162', '?tab=movie&v=2', 0, '2018-11-22 02:22:00', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bot_user`
---
-
-CREATE TABLE IF NOT EXISTS `bot_user` (
-  `id` int(11) unsigned NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `name` varchar(256) NOT NULL,
-  `value` varchar(256) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `banner` (`id`, `photo_id`, `url`, `status`, `updated_at`, `created_at`) VALUES
+(1, '45', '/project3/store/product/5', 1, '2018-12-12 15:59:27', '0000-00-00 00:00:00'),
+(2, '48', '/project3/store/product/6', 1, '2018-12-12 15:59:37', '0000-00-00 00:00:00'),
+(3, '55', '/project3/store/product/7', 1, '2018-12-12 15:59:42', '0000-00-00 00:00:00'),
+(6, '20', 'https://www.facebook.com/phong.hm.1', NULL, '2018-12-12 08:58:18', '2018-12-12 08:58:18');
 
 -- --------------------------------------------------------
 
@@ -204,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `quanlity` int(11) NOT NULL DEFAULT '1',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -239,64 +93,6 @@ INSERT INTO `category` (`id`, `label`, `url`, `type`, `parent_id`, `reg_date`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
---
-
-CREATE TABLE IF NOT EXISTS `messages` (
-  `id` int(11) unsigned NOT NULL,
-  `body` longtext NOT NULL,
-  `sender` int(11) NOT NULL,
-  `receiver` int(11) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`id`, `body`, `sender`, `receiver`, `reg_date`) VALUES
-(65, 'tÆ° váº¥n ', 1, 0, '2018-05-07 06:54:56'),
-(66, 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?<br/><button class="bot-bt"><text>Sáº£n pháº©m</text></button><button class="bot-bt"><text>Thanh toÃ¡n</text></button><button class="bot-bt"><text>ThÃ´ng tin</text></button>', 0, 1, '2018-05-07 06:54:56'),
-(67, 'Sáº£n pháº©m', 1, 0, '2018-05-07 06:55:08'),
-(68, 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?<br/><button class="bot-bt"><text>Phone</text></button><button class="bot-bt"><text>Laptop</text></button>', 0, 1, '2018-05-07 06:55:08'),
-(69, 'Phone', 1, 0, '2018-05-07 06:55:25'),
-(70, 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?<br/><button class="bot-bt"><text>Apple</text></button><button class="bot-bt"><text>Samsung</text></button><button class="bot-bt"><text>Bá» qua</text></button>', 0, 1, '2018-05-07 06:55:25'),
-(71, 'Apple', 1, 0, '2018-05-07 06:55:38'),
-(72, 'Sá»‘ tiá»n báº¡n cÃ³ thá»ƒ chi tráº£?<br/><button class="bot-bt"><text>5 Tr</text></button><button class="bot-bt"><text>15 Tr</text></button><button class="bot-bt"><text>30 Tr</text></button>', 0, 1, '2018-05-07 06:55:38'),
-(73, '20 Tr', 1, 0, '2018-05-07 06:55:49'),
-(74, 'Báº¡n muá»‘n kÃ­ch thÆ°á»›c mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?<br/><button class="bot-bt"><text>Lá»›n</text></button><button class="bot-bt"><text>Vá»«a</text></button><button class="bot-bt"><text>KhÃ´ng quan trá»ng</text></button>', 0, 1, '2018-05-07 06:55:49'),
-(75, 'KhÃ´ng quan trá»ng', 1, 0, '2018-05-07 06:55:57'),
-(76, 'Báº¡n muá»‘n Camera cÃ³ Ä‘á»™ phÃ¢n giáº£i bao nhiÃªu?<br/><button class="bot-bt"><text>15 MP</text></button><button class="bot-bt"><text>12 MP</text></button><button class="bot-bt"><text>8 MP</text></button>', 0, 1, '2018-05-07 06:55:57'),
-(77, '12 MP', 1, 0, '2018-05-07 06:56:03'),
-(78, 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn selfie khÃ´ng?<br/><button class="bot-bt"><text>CÃ³</text></button><button class="bot-bt"><text>KhÃ´ng</text></button>', 0, 1, '2018-05-07 06:56:03'),
-(79, 'KhÃ´ng', 1, 0, '2018-05-07 06:56:05'),
-(80, 'Báº¡n muá»‘n Ä‘á»™ phÃ¢n giáº£i mÃ n hÃ¬nh nhÆ° tháº¿ nÃ o?<br/><button class="bot-bt"><text>2K</text></button><button class="bot-bt"><text>FHD</text></button><button class="bot-bt"><text>HD</text></button>', 0, 1, '2018-05-07 06:56:05'),
-(81, 'FHD', 1, 0, '2018-05-07 06:56:10'),
-(82, 'Báº¡n cÃ³ thÆ°á»ng xuyÃªn sá»­ Ä‘iá»‡n thoáº¡i liÃªn tá»¥c?<br/><button class="bot-bt"><text>CÃ³</text></button><button class="bot-bt"><text>KhÃ´ng</text></button><button class="bot-bt"><text>BÃ¬nh thÆ°á»ng</text></button>', 0, 1, '2018-05-07 06:56:10'),
-(83, 'BÃ¬nh thÆ°á»ng', 1, 0, '2018-05-07 06:56:15'),
-(84, 'Báº¡n muá»‘n dung lÆ°á»£ng ram bao nhiÃªu?<br/><button class="bot-bt"><text>6 GB</text></button><button class="bot-bt"><text>3 GB</text></button><button class="bot-bt"><text>Bá» qua</text></button>', 0, 1, '2018-05-07 06:56:15'),
-(85, '3 GB', 1, 0, '2018-05-07 06:56:18'),
-(86, 'VÃ i gá»£i Ã½ tá»‘t nháº¥t dÃ nh cho báº¡n<br/><div class="bot-boxs">\r\n				<div class="bot-box">\r\n					<img src="../php/getfile.php?url=img/upload/2017/12/14/iphone-7-black_29.jpg" class="image">\r\n					<div class="info">\r\n						<a href="?tab=product&v=21">\r\n							<p>Apple iPhone 7 128GB (8)</p>\r\n							<h5 class="price">17,390,000Ä‘</h5>\r\n						</a>\r\n					</div>\r\n				</div>	\r\n			\r\n				<div class="bot-box">\r\n					<img src="../php/getfile.php?url=img/upload/2017/11/12/8-plus-1.png" class="image">\r\n					<div class="info">\r\n						<a href="?tab=product&v=2">\r\n							<p>iPhone 8 Plus 256GB (7.5)</p>\r\n							<h5 class="price">26,990,000Ä‘</h5>\r\n						</a>\r\n					</div>\r\n				</div>	\r\n			\r\n				<div class="bot-box">\r\n					<img src="../php/getfile.php?url=img/upload/2017/12/14/s8_-1.jpg" class="image">\r\n					<div class="info">\r\n						<a href="?tab=product&v=16">\r\n							<p>Samsung Galaxy S8+ (7)</p>\r\n							<h5 class="price">20,490,000Ä‘</h5>\r\n						</a>\r\n					</div>\r\n				</div>	\r\n			</div>', 0, 1, '2018-05-07 06:56:18'),
-(87, 'tÆ° váº¥n', 1, 0, '2018-05-07 06:58:47'),
-(88, 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?<br/><button class="bot-bt"><text>Sáº£n pháº©m</text></button><button class="bot-bt"><text>Thanh toÃ¡n</text></button><button class="bot-bt"><text>ThÃ´ng tin</text></button>', 0, 1, '2018-05-07 06:58:47'),
-(89, 'Sáº£n pháº©m', 1, 0, '2018-05-07 06:58:50'),
-(90, 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?<br/><button class="bot-bt"><text>Phone</text></button><button class="bot-bt"><text>Laptop</text></button>', 0, 1, '2018-05-07 06:58:50'),
-(91, 'Phone', 1, 0, '2018-05-07 06:58:53'),
-(92, 'ThÆ°Æ¡ng hiá»‡u yÃªu thÃ­ch cá»§a báº¡n lÃ  j?<br/><button class="bot-bt"><text>Apple</text></button><button class="bot-bt"><text>Samsung</text></button><button class="bot-bt"><text>Bá» qua</text></button>', 0, 1, '2018-05-07 06:58:54'),
-(93, 'tÆ° váº¥n', 1, 0, '2018-05-07 06:59:16'),
-(94, 'Sá»‘ tiá»n báº¡n cÃ³ thá»ƒ chi tráº£?<br/><button class="bot-bt"><text>5 Tr</text></button><button class="bot-bt"><text>15 Tr</text></button><button class="bot-bt"><text>30 Tr</text></button>', 0, 1, '2018-05-07 06:59:16'),
-(95, 'show advice', 1, 0, '2018-05-07 06:59:27'),
-(96, 'VÃ i gá»£i Ã½ tá»‘t nháº¥t dÃ nh cho báº¡n<br/><div class="bot-boxs">\r\n				<div class="bot-box">\r\n					<img src="../php/getfile.php?url=img/upload/2017/12/14/s8_-1.jpg" class="image">\r\n					<div class="info">\r\n						<a href="?tab=product&v=16">\r\n							<p>Samsung Galaxy S8+ (7)</p>\r\n							<h5 class="price">20,490,000Ä‘</h5>\r\n						</a>\r\n					</div>\r\n				</div>	\r\n			\r\n				<div class="bot-box">\r\n					<img src="../php/getfile.php?url=img/upload/2017/12/14/f3-plus-1.png" class="image">\r\n					<div class="info">\r\n						<a href="?tab=product&v=11">\r\n							<p>OPPO F3 Plus (6.5)</p>\r\n							<h5 class="price">10,690,000Ä‘</h5>\r\n						</a>\r\n					</div>\r\n				</div>	\r\n			\r\n				<div class="bot-box">\r\n					<img src="../php/getfile.php?url=img/upload/2017/12/14/u11-5.jpg" class="image">\r\n					<div class="info">\r\n						<a href="?tab=product&v=12">\r\n							<p>HTC U11 (6)</p>\r\n							<h5 class="price">16,990,000Ä‘</h5>\r\n						</a>\r\n					</div>\r\n				</div>	\r\n			</div>', 0, 1, '2018-05-07 06:59:27'),
-(97, 'tÆ° váº¥n', 1, 0, '2018-05-07 06:59:35'),
-(98, 'HÃ£y Ä‘á»ƒ chÃºng thÃ´i giÃºp báº¡n?<br/><button class="bot-bt"><text>Sáº£n pháº©m</text></button><button class="bot-bt"><text>Thanh toÃ¡n</text></button><button class="bot-bt"><text>ThÃ´ng tin</text></button>', 0, 1, '2018-05-07 06:59:35'),
-(99, 'Sáº£n pháº©m', 1, 0, '2018-05-07 06:59:37'),
-(100, 'Báº¡n muá»‘n mua loáº¡i sáº£n pháº©m nÃ o?<br/><button class="bot-bt"><text>Phone</text></button><button class="bot-bt"><text>Laptop</text></button>', 0, 1, '2018-05-07 06:59:37'),
-(101, 'mmu', 1, 0, '2018-05-07 06:59:45'),
-(102, 'ChÃºng tÃ´i khÃ´ng bÃ¡n MMU', 0, 1, '2018-05-07 06:59:45');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `order`
 --
 
@@ -307,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `total` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order`
@@ -329,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `order_id` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order_detail`
@@ -606,60 +402,22 @@ INSERT INTO `product` (`id`, `name`, `price`, `tags`, `detail`, `category_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `specs`
+-- Table structure for table `role`
 --
 
-CREATE TABLE IF NOT EXISTS `specs` (
+CREATE TABLE IF NOT EXISTS `role` (
   `id` int(11) unsigned NOT NULL,
-  `display` varchar(100) DEFAULT NULL,
-  `os` varchar(100) DEFAULT NULL,
-  `fcam` varchar(100) DEFAULT NULL,
-  `bcam` varchar(100) DEFAULT NULL,
-  `cpu` varchar(100) DEFAULT NULL,
-  `gpu` varchar(100) DEFAULT NULL,
-  `ram` varchar(100) DEFAULT NULL,
-  `storage` varchar(100) DEFAULT NULL,
-  `sd` varchar(100) DEFAULT NULL,
-  `sim` varchar(100) DEFAULT NULL,
-  `battery` varchar(100) DEFAULT NULL,
-  `connect` varchar(100) DEFAULT NULL,
-  `material` varchar(100) DEFAULT NULL,
-  `weight` varchar(100) DEFAULT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `title` varchar(50) NOT NULL,
+  `description` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `specs`
+-- Dumping data for table `role`
 --
 
-INSERT INTO `specs` (`id`, `display`, `os`, `fcam`, `bcam`, `cpu`, `gpu`, `ram`, `storage`, `sd`, `sim`, `battery`, `connect`, `material`, `weight`, `reg_date`) VALUES
-(1, 'QHD 1125 x 2436 pixels, 5.8 inches (~458 ppi máº­t Ä‘á»™ Ä‘iá»ƒm áº£nh)', 'iOS 11.1', '07 MP, f/2.2, 1080p@30fps, 720p@240fps, nháº­n diá»‡n khuÃ´n máº·t, HDR, panorama', '12 MP x2, f/1.8 & f/2.4, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, 2x zoom quang há»', '2x 2.1 GHz Monsoon , 4x 2.1 GHz Mistral', 'Apple GPU (3 lÃµi Ä‘á»“ há»a)', '3 GB', '256 GB', 'KhÃ´ng', 'Nano-SIM', '2716 mAh (21 giá» (3G))', 'LTE-A (3CA) Cat12 600/150 Mbps - Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '', ' 5.8 inches, 143.6 x 70.9 x 7.7 mm (5.65 x 2.79 x 0.30 in) - 174 g (6.14 oz)', '2017-12-14 11:54:59'),
-(2, 'FHD 1080 x 1920 pixels, 5.5 inches (~401 ppi máº­t Ä‘á»™ Ä‘iá»ƒm áº£nh)', 'iOS 11', '07 MP, f/2.2, 1080p@30fps, 720p@240fps, nháº­n diá»‡n khuÃ´n máº·t, HDR, panorama', '12 MP x2, (f/1.8, 28mm & f/2.8, 56mm), tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, 2x z', 'Apple A11 Bionic', 'Apple GPU (3 lÃµi Ä‘á»“ há»a)', '3 GB', '256 GB', 'KhÃ´ng', 'Nano-SIM', '2675 mAh (21 giá» (3G))', 'LTE-A (4CA) Cat16 1024/150 Mbps - Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '', '5.5 inches, 158.4 x 78.1 x 7.5 mm (6.24 x 3.07 x 0.30 in) - 202 g (7.13 oz)', '2017-12-14 11:55:07'),
-(3, 'Super AMOLED QHD 1440 x 2960 pixels, 6.3 inches (~521 ppi máº­t Ä‘á»™ Ä‘iá»ƒm áº£nh)', 'Android 7.1.1 (Nougat)', '08 MP, f/1.7, tá»± Ä‘á»™ng láº¥y nÃ©t, kÃ­ch thÆ°á»›c cáº£m biáº¿n 1/3.6', '12 MP x2, f/1.7 & f/2.4, OIS, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, zoom quang hï', 'Exynos 8895 Octa (4x 2.3 GHz Exynos M2 Mongoose & 4x 1.7 GHz ARM Cortex-A53)', 'Mali-G71 MP20', '6 GB', '64 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', '3300 mAh (22 giá» (3G))', 'LTE-A (4CA) Cat16 1024/150 Mbps - Wi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi Direct, hotspot', '', '6.3 inches, 162.5 x 74.8 x 8.6 mm (6.40 x 2.94 x 0.34 in) - 195 g (6.88 oz)', '2017-12-14 11:54:49'),
-(4, 'LED-backlit IPS LCD (2880 x 1800 pixels, 15.4 inches (~220 ppi máº­t Ä‘á»™ Ä‘iá»ƒm áº£nh))', 'OS X Sierra', '720p FaceTime HD', 'KhÃ´ng cÃ³', 'Intel Core i7 Dual-core 2.9 GHz, Turbo Boost lÃªn Ä‘áº¿n 3.9 GHz, 8 MB L3 cache', 'Intel HD Graphics 630, AMD Radeon Pro 560 4 GB GDDR5', '16 GB 2133 MHz LPDDR3', '512 GB PCIe', 'KhÃ´ng', '', 'Li-Po 76 Wh (10 giá»)', 'Wi-Fi 802.11 b/g/n/ac', '', '34.93 x 24.07 x 1.55 cm (13.75 x 9.48 x 0.61 in) - 1.83 kg (4.02 lb)', '2017-11-12 15:48:28'),
-(5, '5.7 inch, QHD Super AMOLED', '', '05 MP(f/1.7)', '12 MP(f/1.7) Dual pixel ', '4x 2.3 GHz M1 Mongoose & 4x 1.6 GHz Cortex-A53', 'Mali-T880 MP12', '4 GB', '64 GB', 'lÃªn Ä‘áº¿n 256 GB (khe SIM 2)', '2 SIM (Nano-SIM)', '3200mAh', '', '', '5.7 inches', '2017-12-14 11:56:38'),
-(6, 'LTPS IPS LCD - FHD 1080 x 2160 pixels, 6.0 inches (~402 ppi máº­t Ä‘á»™ Ä‘iá»ƒm áº£nh)', 'Android 7.1 (Nougat)', '20 MP, f/2.0, kÃ­ch thÆ°á»›c cáº£m biáº¿n 1/2.8', '16 MP, f/1.8, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, LED flash', '4x 2.3 GHz Cortex-A53 & 4x 1.6 GHz Cortex-A53', 'Mali-G71 MP2', '4 GB', '32 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', '3200 mAh', '', '', '6.0 inches', '2017-12-14 11:57:13'),
-(7, 'LTPS IPS LCD - FHD 1080 x 2160 pixels, 5.9 inches (~407 ppi máº­t Ä‘á»™ Ä‘iá»ƒm áº£nh)', 'Android 7.0 (Nougat)', '13 MP + 2 MP, f/2.0, 720p@30fps', '16 MP + 2 MP, f/2.2, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, LED flash', '4x 2.36 GHz Cortex-A53 & 4x 1.7 GHz Cortex-A53', 'Mali-T830 MP2', '4 GB', '64 GB', '', '', '', '', '', '5.9 inches', '2017-12-14 11:58:13'),
-(8, 'HD, 720 x 1280 pixels', 'Android 7.1.1 (Nougat), káº¿ hoáº¡ch nÃ¢ng cáº¥p lÃªn Android 8.0 (Oreo)', '05 MP', '08 MP, tá»± Ä‘á»™ng láº¥y náº», LED flash', '4x 1.3 GHz Cortex-A7', 'Adreno 304', '1 GB', '8 GB', 'lÃªn Ä‘áº¿n 128 GB', '2 SIM (Nano-SIM)', '4100 mAh', '', '', '5.0 inches', '2017-12-14 11:52:07'),
-(9, 'HD 720 x 1280 pixels', 'Android 7.0 (Nougat)', '8 MP', '8 MP', 'Quad-core 1.4 GHz Cortex-A53', 'Mali-T720MP2', '2 GB', '16 GB', 'lÃªn Ä‘áº¿n 128 GB', '2 SIM (Nano-SIM)', '2650 mAh', '', '', '5.0 inches', '2017-12-14 12:03:33'),
-(10, 'HD', '', '08 MP', '13 MP', 'Adreno 505', 'Adreno 505', '2 GB ', '16 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', '3000 mAh', '', '', '5.2 inches', '2017-12-14 12:06:02'),
-(11, 'FHD 1080 x 1920 pixels', 'Android 6.0 (Marshmallow)', '16 MP', '16 MP', '4x 1.95 GHz Cortex-A72 & 4x 1.44 GHz Cortex-A53', '4x 1.95 GHz Cortex-A72 & 4x 1.44 GHz Cortex-A53', '4 GB', '64 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', '4000 mAh', '', '', '6.0 inches', '2017-12-14 12:10:23'),
-(12, 'QHD 1440 x 2560 pixels', 'Android 7.1 (Nougat)', '16 MP', '12 MP', 'Qualcomm MSM8998 Snapdragon 835', 'Adreno 540', '6 GB', '128 GB', '', '2 SIM (Nano-SIM)', '3000 mAh', '', '', '5.5 inches', '2017-12-14 12:15:03'),
-(13, 'FHD 1080 x 1920 pixels', '', '08 MP', '12', 'Qualcomm MSM8998 Snapdragon 835', 'Adreno 540', '6 GB', '64 GB', '', '2 SIM (Nano-SIM)', '3350 mAh', '', '', '5.1 inches', '2017-12-14 12:17:55'),
-(14, 'QHD 1440 x 2560 pixels', 'Android 7.1.1 (Nougat)', '13 MP', '13 MP', 'Qualcomm MSM8998 Snapdragon 835', 'Adreno 540', '4 GB', '64 GB', '', '2 SIM (Nano-SIM)', '3090 mAh', '', '', '5.3 inches', '2017-12-14 12:21:27'),
-(15, 'HD 900 x 1440 pixels', 'OS X Sierra', '720p FaceTime HD', '', 'Intel Core i5 Dual-core 1.8 GHz, Turbo Boost lÃªn Ä‘áº¿n 2.9 GHz, 3 MB L3 cache', 'Intel HD 6000', '8 GB 1600MHz LPDDR3', '128 GB PCIe', 'SDXC', '', '54 Wh', '', '', '13.3 inches, 32.5 x 22.7 x 1.7 cm (12.8 x 8.94 x 0.68 in)', '2017-12-14 12:45:26'),
-(16, 'QHD 1440 x 2560 pixels', 'Android 7.0 (Nougat)', '08 MP', '12 MP', 'Exynos 8895 Octa', 'Mali-G71 MP20', '4 GB', '64 GB', '', '2 SIM (Nano-SIM)', '3500 mAh', '', '', '6.2 inches', '2017-12-14 14:23:29'),
-(17, 'HD 720 x 1280 pixels', 'Android 7.0 (Nougat)', '05 MP', '13 MP', 'Exynos 7570 Quad', 'Mali-T720', '2 GB', '16 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', '2400 mAh', '', '', '5.0 inches', '2017-12-14 14:21:19'),
-(18, 'FHD 1080 x 1920 pixels', 'Android 6.0 (Marshmallow)', '08 MP, f/1.9, LED flash', '13 MP, f/1.9, 28mm, tá»± Ä‘á»™ng láº¥y nÃ©t, LED flash', 'Samsung Exynos 7 Octa 7870', 'Mali-T830', '3 GB', '32 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB ', '2 SIM (Nano-SIM)', '3300 mAh', '', '', '5.5 inches', '2017-12-14 14:26:53'),
-(19, 'UHD 3840 x 2160 pixels', 'Android 7.1 (Nougat)', '13 MP', '19 MP', 'Qualcomm MSM8998 Snapdragon 835', 'Adreno 540', '4 GB', '64 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', ' 3230 mAh', '', '', '5.5 inches', '2017-12-14 14:32:15'),
-(20, 'FHD 1080 x 1920 pixels', '', '13 MP', '19 MP', 'Qualcomm MSM8998 Snapdragon 835', 'Adreno 540', '4 GB', '64 GB', 'microSD, lÃªn Ä‘áº¿n 256 GB', '2 SIM (Nano-SIM)', '2700 mAh', '', '', '5.2 inches', '2017-12-14 14:35:46'),
-(21, 'HD 750 x 1334 pixels', 'iOS 10.3.2', '07 MP, f/2.2, 1080p@30fps, 720p@240fps, nháº­n diá»‡n khuÃ´n máº·t, HDR, panorama', '12 MP, f/1.8, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, OIS, 4 LED flash (2 tone)', 'Apple A10 Fusion APL1W24', 'PowerVR Series7XT Plus (6 lÃµi Ä‘á»“ há»a)', '2 GB', '128 GB', 'KhÃ´ng', 'Nano-SIM', '1960 mAh', '', '', '4.7 inches ', '2017-12-14 14:51:00'),
-(22, 'HD 750 x 1334 pixels', 'iOS 10.3.2', '07 MP, f/2.2, 1080p@30fps, 720p@240fps, nháº­n diá»‡n khuÃ´n máº·t, HDR, panorama', '12 MP, f/1.8, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, OIS, 4 LED flash (2 tone)', 'Apple A10 Fusion APL1W24', 'PowerVR Series7XT Plus (6 lÃµi Ä‘á»“ há»a)', '2 GB', '32 GB', 'KhÃ´ng', 'Nano-SIM', '1960 mAh', '', '', '4.7 inches ', '2017-12-14 14:52:19'),
-(23, 'FHD 1080 x 1920 pixels', 'iOS 10.3.2', '01 MP, f/2.2, 31mm, 720p@30fps, nháº­n diá»‡n khuÃ´n máº·t, HDR, FaceTime', '08 MP, f/2.2, 29mm, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, OIS, LED flash kÃ©p (2 ', 'Apple A8 2x 1.4 GHz Typhoon (ná»n táº£ng ARM v8)', 'PowerVR GX6450 (6 lÃµi Ä‘á»“ há»a)', '1 GB', '64 GB', 'KhÃ´ng', 'Nano-SIM', '2915 mAh', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '', '5.5 inches', '2017-12-14 14:58:37'),
-(24, 'FHD 1080 x 1920 pixels', 'iOS 10.3.2', '01 MP, f/2.2, 31mm, 720p@30fps, nháº­n diá»‡n khuÃ´n máº·t, HDR, FaceTime', '08 MP, f/2.2, 29mm, tá»± Ä‘á»™ng láº¥y nÃ©t nháº­n diá»‡n theo giai Ä‘oáº¡n, OIS, LED flash kÃ©p (2 ', 'Apple A8 2x 1.4 GHz Typhoon (ná»n táº£ng ARM v8)', 'PowerVR GX6450 (6 lÃµi Ä‘á»“ há»a)', '1 GB', '16 GB', 'KhÃ´ng', 'Nano-SIM', '2915 mAh', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '', '5.5 inches', '2017-12-14 15:01:01'),
-(25, 'QHD 1536 x 2048 pixels', 'iOS 7.0.4', '1.2 MP, 720p@30fps, nháº­n diÃªn khuÃ´n máº·t, FaceTime qua Wi-Fi hoáº·c máº¡ng di Ä‘á»™ng', '05 MP, 2592x1944 pixels, tá»± Ä‘á»™ng láº¥y nÃ©t', 'Apple A7', 'PowerVR G6430 (4 nhÃ¢n Ä‘á»“ há»a)', '1 GB', '32 GB', 'KhÃ´ng', 'Nano-SIM', '8750 mAh', '', '', '9.7 inches', '2017-12-14 15:06:14'),
-(26, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2017-12-27 10:01:27'),
-(27, 'FHD', 'Android', '25 MP', '16 MP', '', '', '6 GB', '', '', '', '3400 mAh', '', '', '6.23 inches', '2018-05-07 03:36:48');
+INSERT INTO `role` (`id`, `title`, `description`) VALUES
+(0, 'User', ''),
+(1, 'Admin', '');
 
 -- --------------------------------------------------------
 
@@ -727,15 +485,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(30) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `avatar` varchar(50) DEFAULT NULL,
-  `google` varchar(50) DEFAULT NULL,
-  `facebook` varchar(50) DEFAULT NULL,
-  `twitter` varchar(50) DEFAULT NULL,
   `phone` int(11) DEFAULT NULL,
   `pass` varchar(50) NOT NULL,
-  `position` int(11) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
+  `role_id` int(11) DEFAULT '0',
+  `address` varchar(100) DEFAULT NULL,
   `gender` varchar(6) DEFAULT NULL,
-  `description` varchar(256) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
@@ -744,33 +498,21 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `fullname`, `username`, `email`, `avatar`, `google`, `facebook`, `twitter`, `phone`, `pass`, `position`, `status`, `gender`, `description`, `updated_at`, `created_at`) VALUES
-(1, 'Admin', 'root', 'root@admin.com', NULL, NULL, NULL, NULL, NULL, 'shaman12', 0, 0, 'male', 'GOD OF NEW WORLD', '2018-11-21 07:29:52', '0000-00-00 00:00:00'),
-(2, 'Minh Phu', 'hmphu', 'hmp121297@gmail.com', NULL, NULL, NULL, NULL, NULL, 'shaman12', NULL, NULL, 'male', NULL, '2017-10-30 04:03:00', '0000-00-00 00:00:00'),
-(3, 'abc', '12345678', NULL, NULL, NULL, NULL, NULL, 12345678, '', NULL, NULL, NULL, NULL, '2017-11-20 06:35:17', '0000-00-00 00:00:00'),
-(7, 'HoÃ ng Minh Phong', '01629309669', NULL, NULL, NULL, NULL, NULL, 1629309669, '', NULL, NULL, NULL, NULL, '2017-11-20 06:52:09', '0000-00-00 00:00:00'),
-(8, 'test', 'test', 'test@test.com', NULL, NULL, NULL, NULL, NULL, '12345678', NULL, NULL, 'male', NULL, '2018-11-21 01:04:15', '2018-11-21 01:04:15');
+INSERT INTO `user` (`id`, `fullname`, `username`, `email`, `avatar`, `phone`, `pass`, `role_id`, `address`, `gender`, `updated_at`, `created_at`) VALUES
+(1, 'Admin', 'root', 'root@admin.com', NULL, NULL, 'shaman12', 1, '0', 'male', '2018-12-12 14:52:29', '0000-00-00 00:00:00'),
+(2, 'Minh Phu', 'hmphu', 'hmp121297@gmail.com', NULL, NULL, 'shaman12', 1, NULL, 'male', '2018-12-12 07:56:15', '0000-00-00 00:00:00'),
+(3, 'abc', '12345678', NULL, NULL, 12345678, '', NULL, NULL, NULL, '2017-11-19 23:35:17', '0000-00-00 00:00:00'),
+(7, 'HoÃ ng Minh Phong', '01629309669', NULL, NULL, 1629309669, '', NULL, NULL, NULL, '2017-11-19 23:52:09', '0000-00-00 00:00:00'),
+(8, 'test', 'test', 'test@test.com', NULL, NULL, '12345678', NULL, NULL, 'male', '2018-11-20 18:04:15', '2018-11-20 18:04:15');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `aiml`
---
-ALTER TABLE `aiml`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `banner`
 --
 ALTER TABLE `banner`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `bot_user`
---
-ALTER TABLE `bot_user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -783,12 +525,6 @@ ALTER TABLE `cart`
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `messages`
---
-ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -822,9 +558,9 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `specs`
+-- Indexes for table `role`
 --
-ALTER TABLE `specs`
+ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -839,55 +575,37 @@ ALTER TABLE `subproduct`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `usr` (`username`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `google` (`google`),
-  ADD UNIQUE KEY `facebook` (`facebook`),
-  ADD UNIQUE KEY `twitter` (`twitter`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `aiml`
---
-ALTER TABLE `aiml`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=485;
---
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `bot_user`
---
-ALTER TABLE `bot_user`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT for table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=103;
---
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `photo`
 --
