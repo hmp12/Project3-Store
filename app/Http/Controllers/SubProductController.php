@@ -36,6 +36,120 @@
             return $view;
         }
 
+        public function addSubProduct(Request $request) {
+            $tab = 'add-sub-product';
+            $productId = $request->id;
+
+            if ($request->isMethod('post')) {
+                $memory = $request->memory;
+                $color = $request->color;
+                $price = $request->price;
+                
+                $subProduct = new SubProduct();
+                $valid = True;
+                if (!empty($memory)) {
+                    $subProduct->memory = $memory;
+                }
+                else {
+                    $valid = False;
+                    $memoryError = "memory is empty";
+                }
+
+                if (!empty($color)) {
+                    $subProduct->color = $color;
+                }
+                else {
+                    $valid = False;
+                    $colorError = "color is empty";
+                }
+
+                if (!empty($price)) {  
+                    $subProduct->price = $price;
+                }
+                else {
+                    $valid = False;
+                    $priceError = "price is empty";
+                }
+                
+                
+                if ($valid) {
+                    $subProduct->memory = $memory;
+                    $subProduct->color = $color;
+                    $subProduct->price = $price;                    
+                    $subProduct->product_id = $productId;
+
+                    $subProduct->save();           
+                }
+            }
+
+            $data = get_defined_vars();
+
+            $view = View::make('admin/index', $data);
+            return $view;
+
+        }
+
+        public function editSubProduct(Request $request) {
+            $tab = 'add-sub-product';
+            $id = $request->id;
+            $subProduct = SubProduct::where('id', $id)->first();
+            if (!empty($subProduct)) {
+                $memory = $subProduct->memory;
+                $color = $subProduct->color;
+                $price = $subProduct->price;
+                
+            }
+            else {
+                return "SubProduct is not exist";
+            }
+            
+            if ($request->isMethod('post')) {
+                $memory = $request->memory;
+                $color = $request->color;
+                $price = $request->price;
+                
+                $valid = True;
+                if (!empty($memory)) {
+                    $subProduct->memory = $memory;
+                }
+                else {
+                    $valid = False;
+                    $memoryError = "memory is empty";
+                }
+
+                if (!empty($color)) {
+                    $subProduct->color = $color;
+                }
+                else {
+                    $valid = False;
+                    $colorError = "color is empty";
+                }
+
+                if (!empty($price)) {  
+                    $subProduct->price = $price;
+                }
+                else {
+                    $valid = False;
+                    $priceError = "price is empty";
+                }
+                
+                
+                if ($valid) {
+                    $subProduct->memory = $memory;
+                    $subProduct->color = $color;
+                    $subProduct->price = $price;                    
+
+                    $subProduct->save();    
+                }
+            }
+
+            $data = get_defined_vars();
+
+            $view = View::make('admin/index', $data);
+            return $view;
+        }
+
+
         public function getSubProduct(Request $request) {
             $productId = $request->productId;
             $memory = $request->memory;

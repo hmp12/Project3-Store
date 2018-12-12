@@ -46,6 +46,10 @@ Route::post('/admin/product/edit/{id}', 'ProductController@editProduct');
 Route::post('/admin/product/delete', 'ProductController@deleteProducts');
 
 Route::get('/admin/product/edit/{id}/subproduct', 'SubProductController@showSubProducts');
+Route::get('/admin/product/edit/{id}/subproduct/add', 'SubProductController@addSubProduct');
+Route::post('/admin/product/edit/{id}/subproduct/add', 'SubProductController@addSubProduct');
+Route::get('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct');
+Route::post('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct');
 
 Route::get('/admin/user', 'UserController@showUsers');
 Route::get('/admin/user/edit/{id}', 'UserController@editUser');

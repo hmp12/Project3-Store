@@ -36,6 +36,9 @@ $(document).ready(function() {
 	$('#add').click(function() {
 		location.replace(public_path + "/admin/" + $(this).val() + "/add");
 	});
+	$('.subProducts #add').click(function() {
+		location.replace( window.location.pathname + "/add");
+	});
 	$('#reload').click(function() {
 		location.reload();
 	});
