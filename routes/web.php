@@ -61,6 +61,9 @@ Route::get('/admin/photo/page/{page}', 'PhotoController@showPhotos');
 Route::get('/admin/photo/add', 'PhotoController@addPhoto');
 Route::post('/admin/photo/add', 'PhotoController@addPhoto');
 
+Route::get('/admin/order', 'OrderController@showOrders');
+Route::get('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
+
 
 Route::get('/store', 'StoreController@showHomePage');
 Route::get('/store/product/{id}', 'ProductController@showProductDetail');

@@ -34,7 +34,7 @@
         }
 
         public function editUser(Request $request) {
-            $tab = 'add-user';
+            $tab = 'edit-user';
             $id = $request->id;
             $user = User::where('id', $id)->first();
             if (!empty($user)) {
