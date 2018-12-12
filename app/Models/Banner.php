@@ -9,7 +9,7 @@
         protected $table = 'banner';
 
         public function Photo() {
-            return $this->hasOne('App\Models\Photo');
+            return $this->belongsTo('App\Models\Photo');
         }
     }
     

@@ -64,6 +64,13 @@ Route::post('/admin/photo/add', 'PhotoController@addPhoto');
 Route::get('/admin/order', 'OrderController@showOrders');
 Route::get('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
 
+Route::get('/admin/banner', 'BannerController@showBanners');
+Route::get('/admin/banner/add', 'BannerController@addBanner');
+Route::post('/admin/banner/add', 'BannerController@addBanner');
+Route::get('/admin/banner/edit/{id}', 'BannerController@editBanner');
+Route::post('/admin/banner/edit/{id}', 'BannerController@editBanner');
+Route::post('/admin/banner/delete', 'BannerController@deleteBanners');
+
 
 Route::get('/store', 'StoreController@showHomePage');
 Route::get('/store/product/{id}', 'ProductController@showProductDetail');

@@ -34,11 +34,11 @@
 						<option value="0" disabled hidden>Choose categories here</option>
 						@foreach ($categories as $category)
 							@if (empty($category->children))
-								<option value="{{ $category->id }}" {{ (isset($categoryId) && $category->id == $categoryId) ? 'seleted' : ''}}>{{ $category->label }}</option>';
+								<option value="{{ $category->id }}" {{ (isset($categoryId) && $category->id == $categoryId) ? 'selected' : ''}}>{{ $category->label }}</option>';
 							@else
 								<optgroup label="{{ $category->label }}">
 								@foreach ($category->children as $child)
-									<option value="{{ $child->id }}" {{ (isset($categoryId) && $child->id == $categoryId) ? 'seleted' : ''}}>{{ $child->label }}</option>';
+									<option value="{{ $child->id }}" {{ (isset($categoryId) && $child->id == $categoryId) ? 'selected' : ''}}>{{ $child->label }}</option>';
 								@endforeach	
 							@endif
 						@endforeach

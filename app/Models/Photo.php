@@ -9,7 +9,7 @@
         protected $table = 'photo';
 
         public function banner() {
-            return $this->belongsTo(Banner::Class);
+            return $this->hasOne(Banner::Class);
         }
 
         public function product() {

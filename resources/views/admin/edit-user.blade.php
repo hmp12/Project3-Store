@@ -30,7 +30,7 @@
 				<select name="role" class="form-control">
 					<option value="0" disabled selected hidden>Choose role here</option>
 					@foreach ($roles as $role)
-						<option value="{{ $role->id }}">{{ $role->title }}</option>
+						<option value="{{ $role->id }}" {{ (isset($roleId) && $role->id == $roleId) ? 'selected' : '' }}>{{ $role->title }}</option>
 					@endforeach				
 				</select>
 				<input type="submit" value="Update" class="btn btn-success btn-lg">
