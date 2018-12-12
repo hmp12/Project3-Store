@@ -18,6 +18,25 @@
 					var tab = "{{ $tab }}";
 				</script>
 				<div class="modal purchase">
+					<div class="modal-dialog">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<h4 class="modal-title">Thanh toán</h4>
+								<button type="button" class="close" data-dismiss="modal purchase">&times;</button>
+							</div>
+							
+
+							<div class="modal-body">
+								
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" id="btn-purchase">Thanh toán</button>
+							</div>
+							
+						</div>
+					</div>
 				</div>
 				@include ('store.'.$tab)
 			</div>

@@ -18,15 +18,26 @@ $(document).ready(function() {
 	});
 
 	$('#btn-purchase').click(function() {
+		var cardNumber = $('#card-number').val();
+		var address = $('#address').val();
+
 		$.ajax({
 			url: public_path + "/store/purchase",
 			type: 'POST',
 			data: {
-
+				cardNumber: cardNumber,
+				address: address
 			},
 			success: function(data) {
-				$('.modal .purchase').html(data);
-				$('.modal .purchase').show();
+				if (data == '1') {
+					$('.modal-body').html('<h1>Thanh toán thành công</h1>');
+					$('.modal-footer').remove();
+				}
+				else {
+					$('.modal-body').html(data);
+					$('.purchase').show();
+				}
+				update_cart();
 			}
 		});
 		

@@ -142,6 +142,20 @@ function update_cart() {
 					});
 				}
 			});
+			$('#btn-purchase').click(function() {
+				$.ajax({
+					url: public_path + "/store/purchase",
+					type: 'GET',
+					data: {
+		
+					},
+					success: function(data) {
+						$('.modal-body').html(data);
+						$('.purchase').show();
+					}
+				});
+				
+			});
 		}
 	});
 }

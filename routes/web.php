@@ -78,6 +78,7 @@ Route::post('/store/cart', 'StoreController@showCart');
 Route::post('/store/cart/delete', 'StoreController@deleteCart');
 Route::post('/store/cart/add', 'StoreController@addCart');
 
+Route::get('/store/purchase', 'PaymentController@purchase');
 Route::post('/store/purchase', 'PaymentController@purchase');
 
 

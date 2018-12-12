@@ -12,6 +12,10 @@
             return $this->hasMany(Cart::Class);
         }
 
+        public function orders() {
+            return $this->hasMany(Order::Class);
+        }
+
         static function getUser($request, $username, $pass) {
             if (empty($username)) {
                 $request->session()->put('loginError', "Please enter your username");

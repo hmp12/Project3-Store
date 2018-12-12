@@ -19,10 +19,6 @@
         public function category() {
             return $this->belongsTo(Category::Class);
         }
-
-        public function cart() {
-            return $this->hasMany(Cart::Class);
-        }
     }
     
 ?>

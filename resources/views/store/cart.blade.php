@@ -1,5 +1,4 @@
-
-@if (!empty($carts))
+@if ($carts->count() > 0)
 	<table>
 	@foreach ($carts as $cart)
 		@php
