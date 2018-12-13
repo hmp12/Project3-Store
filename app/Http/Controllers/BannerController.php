@@ -10,23 +10,7 @@
     class BannerController extends Controller {
         public function showBanners(Request $request) {
             $data['tab'] = 'banner-manage';
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
-            $banners = Banner::all();
-
-            $bannersPerPage = 10;
-            $data['maxPage'] = count($banners)/$bannersPerPage + 1;
-
-            $data['banners'] = array();
-            for ($i = ($page-1)*$bannersPerPage; $i < $page*$bannersPerPage; $i++) {
-                if (empty($banners[$i])) {
-                    break;
-                }
-                $data['banners'][] = $banners[$i];
-            }
-            $data['page'] = $page;
+            $data['banners'] = Banner::all();
 
             $view = View::make('admin/index', $data);
             return $view;

@@ -9,23 +9,7 @@
     class CategoryController extends Controller {
         public function showCategories(Request $request) {
             $data['tab'] = 'category-manage';
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
-            $categories = Category::all();
-
-            $categoriesPerPage = 10;
-            $data['maxPage'] = count($categories)/$categoriesPerPage + 1;
-
-            $data['categories'] = array();
-            for ($i = ($page-1)*$categoriesPerPage; $i < $page*$categoriesPerPage; $i++) {
-                if (empty($categories[$i])) {
-                    break;
-                }
-                $data['categories'][] = $categories[$i];
-            }
-            $data['page'] = $page;
+            $data['categories'] = Category::all();
 
             $view = View::make('admin/index', $data);
             return $view;

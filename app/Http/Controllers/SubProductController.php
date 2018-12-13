@@ -13,24 +13,8 @@
             $data['productId'] = $productId;
 
             $data['tab'] = 'sub-product-manage';
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
             $data['product'] = Product::where('id', $productId)->first();
-            $subProducts = $data['product']->subProducts;
-
-            $productsPerPage = 10;
-            $data['maxPage'] = count($subProducts)/$productsPerPage + 1;
-
-            $data['subProducts'] = array();
-            for ($i = ($page-1)*$productsPerPage; $i < $page*$productsPerPage; $i++) {
-                if (empty($subProducts[$i])) {
-                    break;
-                }
-                $data['subProducts'][] = $subProducts[$i];
-            }
-            $data['page'] = $page;
+            $data['subProducts'] = $data['product']->subProducts;            
 
             $view = View::make('admin/index', $data);
             return $view;

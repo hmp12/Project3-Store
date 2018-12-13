@@ -5,6 +5,8 @@ $(document).ready(function() {
 	//update_cart();
 	//update_noti();
 
+	$('#table').DataTable();
+
 	$('#url').focus(function() {
 		$(this).val($('#title').val().trim().toLowerCase().replace(/ /g, '-'));
 	});

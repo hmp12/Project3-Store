@@ -12,23 +12,7 @@
     class UserController extends Controller {
         public function showUsers(Request $request) {
             $data['tab'] = 'user-manage';
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
-            $users = User::all();
-
-            $usersPerPage = 10;
-            $data['maxPage'] = count($users)/$usersPerPage + 1;
-
-            $data['users'] = array();
-            for ($i = ($page-1)*$usersPerPage; $i < $page*$usersPerPage; $i++) {
-                if (empty($users[$i])) {
-                    break;
-                }
-                $data['users'][] = $users[$i];
-            }
-            $data['page'] = $page;
+            $data['users'] = User::all();
 
             $view = View::make('admin/index', $data);
             return $view;

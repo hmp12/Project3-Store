@@ -12,23 +12,7 @@
     class ProductController extends Controller {
         public function showProducts(Request $request) {
             $data['tab'] = 'product-manage';
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
-            $products = Product::all();
-
-            $productsPerPage = 10;
-            $data['maxPage'] = count($products)/$productsPerPage + 1;
-
-            $data['products'] = array();
-            for ($i = ($page-1)*$productsPerPage; $i < $page*$productsPerPage; $i++) {
-                if (empty($products[$i])) {
-                    break;
-                }
-                $data['products'][] = $products[$i];
-            }
-            $data['page'] = $page;
+            $data['products'] = Product::all();
 
             $view = View::make('admin/index', $data);
             return $view;

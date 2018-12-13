@@ -155,7 +155,6 @@ input[type="checkbox"]:checked ~ .round-check:after {
 
 .btn-lg {
 	border-radius: 10px;
-	margin-top: 20px;
 	height: 50px;
 	min-width: 120px;
 }
@@ -416,11 +415,19 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	padding: 5% 5% 5%;
 }
 
+.login-box .btn {
+	margin-top: 20px;
+}
+
 .signup-box {
 	margin-top: 40px;
 	background-color: #ffffff;
 	box-shadow: 3px 3px 5px #888888;
 	padding: 3% 5% 3%;
+}
+
+.signup-box .btn {
+	margin-top: 20px;
 }
 
 .error {
@@ -453,6 +460,10 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	width: 100%;
 	min-height: 105vh;
 	overflow: auto;
+}
+
+#table_wrapper {
+	margin-top: 20px;
 }
 
 .content-wrapper {

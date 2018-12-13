@@ -11,23 +11,7 @@
     class OrderController extends Controller {
         public function showOrders(Request $request) {
             $data['tab'] = 'order-manage';
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
-            $orders = Order::all();
-
-            $orderDetailPerPage = 10;
-            $data['maxPage'] = count($orders)/$orderDetailPerPage + 1;
-
-            $data['orders'] = array();
-            for ($i = ($page-1)*$orderDetailPerPage; $i < $page*$orderDetailPerPage; $i++) {
-                if (empty($orders[$i])) {
-                    break;
-                }
-                $data['orders'][] = $orders[$i];
-            }
-            $data['page'] = $page;
+            $data['orders'] = Order::all();
 
             $view = View::make('admin/index', $data);
             return $view;
