@@ -31,7 +31,7 @@
 
 	@foreach ($categories as $cate)
 		<div id="{{ $cate['url'] }}">
-			<h1>{{ $cate['label'] }}</h1>
+			<h1>{{ $cate['name'] }}</h1>
 		</div>
 		<div class="row">
 			@php
