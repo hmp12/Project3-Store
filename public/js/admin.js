@@ -67,7 +67,6 @@ $(document).ready(function() {
 					}
 				});
 			}
-			//$('.content').load(tab + '.php');
 			location.reload();
 		}
 	});
@@ -96,7 +95,7 @@ $(document).ready(function() {
 					alert("Something wrong, please try again");
 				}
 			});
-			//location.reload();
+			location.reload();
 		}
 	});
 	
