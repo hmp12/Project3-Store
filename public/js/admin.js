@@ -79,7 +79,8 @@ $(document).ready(function() {
 		location.replace(public_path + "/admin/" + $('#add').val() + '/edit/' + id);
 	});
 
-	$('.delete').click(function() {
+	//$('.delete').click(function() {
+	$('tbody').on('click', '.delete', function () {
 		$confirm = confirm("Are you sure to delete this " + tab + "?");
 		if ($confirm) {
 			var id = [];

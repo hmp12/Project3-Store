@@ -13,10 +13,11 @@
 			</div>
 		</li>
 		<li><a href="{{ route('logout') }}" id="login_out">
-			<?php 
-				if (empty($user)) echo '<i class="fa fa-sign-in-alt"></i>';
-				else echo '<i class="fa fa-sign-out-alt"></i>';
-			?>
+			@if (Auth::check())
+				<i class="fa fa-sign-out-alt"></i>
+			@else
+				<i class="fa fa-sign-in-alt"></i>
+			@endif
 		</a></li>
 		<li id="noti"><i class="fa fa-bell"></i></li>
 		<li id="cart">

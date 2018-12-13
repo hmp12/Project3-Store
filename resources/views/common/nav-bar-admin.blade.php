@@ -13,7 +13,7 @@
 			</div>
 		</li>
 		<li><a href="{{ route('logout') }}" id="login_out">
-			@if (session()->has('users'))
+			@if (Auth::check())
 				<i class="fa fa-sign-out-alt"></i>
 			@else
 				<i class="fa fa-sign-in-alt"></i>
