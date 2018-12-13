@@ -103,6 +103,11 @@
             return $view;
         }
 
+        public function deleteUsers(Request $request) {
+            $ids = $request->ids;
+
+            User::destroy($ids);
+        }
 
         public function login(Request $request) {
             if ($request->session()->has('user')) {

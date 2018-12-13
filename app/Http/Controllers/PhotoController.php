@@ -97,5 +97,11 @@
             $view = View::make('admin/index', $data);
             return $view;
         }
+
+        public function deletePhotos(Request $request) {
+            $ids = $request->ids;
+
+            Photo::destroy($ids);
+        }
     }
 ?>

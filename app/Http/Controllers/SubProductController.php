@@ -149,6 +149,11 @@
             return $view;
         }
 
+        public function deleteSubProducts(Request $request) {
+            $ids = $request->ids;
+
+            SubProduct::destroy($ids);
+        }
 
         public function getSubProduct(Request $request) {
             $productId = $request->productId;

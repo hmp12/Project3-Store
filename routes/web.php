@@ -37,7 +37,13 @@ Route::get('/admin', function () {
 
 Route::get('/admin/dashboard', 'AdminController@showDashboard');
 
-
+Route::get('/admin/category', 'CategoryController@showCategories');
+Route::get('/admin/category/page/{page}', 'CategoryController@showCategories');
+Route::get('/admin/category/add', 'CategoryController@addCategory');
+Route::post('/admin/category/add', 'CategoryController@addCategory');
+Route::get('/admin/category/edit/{id}', 'CategoryController@editCategory');
+Route::post('/admin/category/edit/{id}', 'CategoryController@editCategory');
+Route::post('/admin/category/delete', 'CategoryController@deleteCategories');
 
 Route::get('/admin/product', 'ProductController@showProducts');
 Route::get('/admin/product/page/{page}', 'ProductController@showProducts');
@@ -56,6 +62,7 @@ Route::post('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct'
 Route::get('/admin/user', 'UserController@showUsers');
 Route::get('/admin/user/edit/{id}', 'UserController@editUser');
 Route::post('/admin/user/edit/{id}', 'UserController@editUser');
+Route::post('/admin/user/delete', 'UserController@deleteUsers');
 
 Route::get('/admin/post', 'PostController@showPost');
 Route::get('/admin/post/edit/{id}', 'PostController@editPost');

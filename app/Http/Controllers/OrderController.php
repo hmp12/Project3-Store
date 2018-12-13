@@ -43,6 +43,12 @@
             $view = View::make('admin/index', $data);
             return $view;
         }
+
+        public function deleteOrders(Request $request) {
+            $ids = $request->ids;
+
+            Order::destroy($ids);
+        }
     }
 
 ?>

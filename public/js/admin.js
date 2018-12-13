@@ -96,8 +96,7 @@ $(document).ready(function() {
 					alert("Something wrong, please try again");
 				}
 			});
-			//$('.content').load(tab + '.php');
-			location.reload();
+			//location.reload();
 		}
 	});
 	
