@@ -3,15 +3,16 @@
 	<head>
 		<title>Gâu Gâu Store</title>
 		@include ('common.head')
+		<link href="{{ asset('css/sb-admin.min.css') }}" rel="stylesheet">
 		<script type="text/javascript" src="{{ asset('js/store.js') }}"></script>
 	</head>
 
 	<body>
 		<div class=error></div>
 		@include ('common.nav-bar-store')
-		<div class="store page">
+		<div id="wrapper">
 			@include ('common.side-bar-store')
-			<div class="content">				
+			<div class="content-warpper store">				
 				<script type="text/javascript">
 					var user_id = "{{ isset($user) ? $user->id : 0 }}";
 					var tab = "{{ $tab }}";
@@ -37,7 +38,9 @@
 						</div>
 					</div>
 				</div>
-				@include ('store.'.$tab)
+				<div class="container-fluid">
+					@include ('store.'.$tab)
+				</div>
 			</div>
 			
 		</div>
@@ -56,5 +59,6 @@
 			</div>
 		</div>
 		@include ('common.footer')
+		<script src="{{ asset('js/sb-admin.min.js') }}"></script>
 	</body>
 </html>

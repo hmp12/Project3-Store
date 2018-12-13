@@ -1,9 +1,14 @@
 <ul class="sidebar navbar-nav toggled">
 	<li class="nav-item active">
 		<a class="nav-link" href="{{ url('/') }}/admin">
-		<i class="fa fa-dashboard"></i>
+		<i class="fa fa-tachometer-alt"></i>
 		<span>Dashboard</span>
 		</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="{{ url('/') }}/admin/order">
+		<i class="fa fa-money-check-alt"></i>
+		<span>Orders</span></a>
 	</li>
 	<li class="nav-item">
 		<a class="nav-link" href="{{ url('/') }}/admin/user">
@@ -17,7 +22,7 @@
 	</li>
 	<li class="nav-item">
 		<a class="nav-link" href="{{ url('/') }}/admin/photo">
-		<i class="fa fa-picture-o"></i>
+		<i class="fa fa-image"></i>
 		<span>Photos</span></a>
 	</li>
 	<li class="nav-item">

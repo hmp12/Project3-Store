@@ -27,7 +27,7 @@
 				<td>{{ $banner->url }}</td>
 				<td>{{ $banner->status }}</td>
 				<td>
-					<button value="{{ $banner->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-pencil-square-o"></i></button>
+					<button value="{{ $banner->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-edit"></i></button>
 					<button value="{{ $banner->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></button>
 				</td>
 			</tr>

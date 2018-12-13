@@ -9,7 +9,7 @@
 
     class PhotoController extends Controller {
         public function showPhotos(Request $request) {
-            $data['tab'] = 'photos-list';
+            $data['tab'] = 'photo-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;

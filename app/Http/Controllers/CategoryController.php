@@ -8,7 +8,7 @@
 
     class CategoryController extends Controller {
         public function showCategories(Request $request) {
-            $data['tab'] = 'categories-list';
+            $data['tab'] = 'category-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;
@@ -75,7 +75,7 @@
 
         }
 
-        public function editCategory(Request $request) {
+        public function updateCategory(Request $request) {
             $tab = 'add-category';
             $id = $request->id;
             $category = Category::where('id', $id)->first();

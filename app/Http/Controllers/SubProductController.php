@@ -12,7 +12,7 @@
             $productId = $request->id;
             $data['productId'] = $productId;
 
-            $data['tab'] = 'sub-products-list';
+            $data['tab'] = 'sub-product-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;
@@ -90,7 +90,7 @@
 
         }
 
-        public function editSubProduct(Request $request) {
+        public function updateSubProduct(Request $request) {
             $tab = 'add-sub-product';
             $id = $request->id;
             $subProduct = SubProduct::where('id', $id)->first();

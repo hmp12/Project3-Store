@@ -33,7 +33,7 @@
 				<td>{{ $subProduct->color }}</td>
 				<td>{{ $subProduct->price }}</td>
 				<td>
-					<button value="{{ $subProduct->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-pencil-square-o"></i></button>
+					<button value="{{ $subProduct->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-edit"></i></button>
 					<button value="{{ $subProduct->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></button>
 				</td>
 			</tr>				

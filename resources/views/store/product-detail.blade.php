@@ -46,7 +46,7 @@
 					</div>					
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-success btn-lg" id="btn-add-card">Thêm</button>
+					<button class="btn btn-success btn-lg" id="btn-add-cart">Thêm</button>
 				</div>
 			</div>
 		</div>

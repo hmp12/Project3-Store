@@ -96,7 +96,7 @@
 									</table>
 								</div>
 							</a>
-							<button value="{{ $product['id'] }}" class="button compare">So sánh</button>	
+							<button value="{{ $product['id'] }}" class="btn btn-info btn-lg">So sánh</button>	
 						</div>
 					</div>	
 				

@@ -14,8 +14,8 @@
 		</li>
 		<li><a href="{{ url('/') }}/user/logout" id="login_out">
 			<?php 
-				if (empty($user)) echo '<i class="fa fa-sign-in"></i>';
-				else echo '<i class="fa fa-sign-out"></i>';
+				if (empty($user)) echo '<i class="fa fa-sign-in-alt"></i>';
+				else echo '<i class="fa fa-sign-out-alt"></i>';
 			?>
 		</a></li>
 		<li id="noti"><i class="fa fa-bell"></i></li>

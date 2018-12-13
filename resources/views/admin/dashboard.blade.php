@@ -13,7 +13,7 @@
 				<div class="card-body-icon">
 				<i class="fa fa-user"></i>
 				</div>
-				<div class="mr-5">{{ $usersCount }}</div>
+				<div class="mr-6"><h3>{{ $usersCount }} Users</h3></div>
 			</div>
 			<a class="card-footer text-white clearfix small z-1" href="{{ url('/') }}/admin/user">
 				<span class="float-left">View Users</span>
@@ -30,7 +30,7 @@
 				<div class="card-body-icon">
 				<i class="fa fa-shopping-cart"></i>
 				</div>
-				<div class="mr-5"></div>
+				<div class="mr-5"><h3>{{ $ordersCount }} Orders</h3></div>
 			</div>
 			<a class="card-footer text-white clearfix small z-1" href="{{ url('/') }}/admin/order">
 				<span class="float-left">View Orders</span>
@@ -47,7 +47,7 @@
 				<div class="card-body-icon">
 				<i class="fa fa-archive"></i>
 				</div>
-				<div class="mr-5"></div>
+				<div class="mr-5"><h3>{{ $productsCount }} Products</h3></div>
 			</div>
 			<a class="card-footer text-white clearfix small z-1" href="{{ url('/') }}/admin/product">
 				<span class="float-left">View Products</span>
@@ -62,9 +62,9 @@
 			<div class="card text-white bg-info o-hidden h-100">
 			<div class="card-body">
 				<div class="card-body-icon">
-				<i class="fa fa-picture-o"></i>
+				<i class="fa fa-image"></i>
 				</div>
-				<div class="mr-5"></div>
+				<div class="mr-5"><h3>{{ $photosCount }} Photos</h3></div>
 			</div>
 			<a class="card-footer text-white clearfix small z-1" href="{{ url('/') }}/admin/photo">
 				<span class="float-left">View Photos</span>
@@ -81,7 +81,7 @@
 				<div class="card-body-icon">
 				<i class="fa fa-tags"></i>
 				</div>
-				<div class="mr-5"></div>
+				<div class="mr-5"><h3>{{ $categoriesCount }} Categories</h3></div>
 			</div>
 			<a class="card-footer text-white clearfix small z-1" href="{{ url('/') }}/admin/category">
 				<span class="float-left">View Categories</span>
@@ -98,7 +98,7 @@
 				<div class="card-body-icon">
 				<i class="fa fa-object-ungroup"></i>
 				</div>
-				<div class="mr-5"></div>
+				<div class="mr-5"><h3>{{ $bannersCount }} Banners</h3></div>
 			</div>
 			<a class="card-footer text-white clearfix small z-1" href="{{ url('/') }}/admin/banner">
 				<span class="float-left">View Banners</span>

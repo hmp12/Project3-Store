@@ -11,7 +11,7 @@
 
     class ProductController extends Controller {
         public function showProducts(Request $request) {
-            $data['tab'] = 'products-list';
+            $data['tab'] = 'product-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;
@@ -146,7 +146,7 @@
         }
 
 
-        public function editProduct(Request $request) {
+        public function updateProduct(Request $request) {
             $tab = 'add-product';
             $id = $request->id;
             $product = Product::where('id', $id)->first();
@@ -376,7 +376,7 @@
 
             $data = get_defined_vars();
 
-            $view = View::make('store/phone-filter', ['products' => $products]);
+            $view = View::make('store/filter-result', ['products' => $products]);
             return $view;
         }
 
@@ -421,7 +421,7 @@
                     $products[] = Product::where('id', $productId)->first();
                 }
             }
-            $view = View::make('store/search-list', ['products' => $products]);
+            $view = View::make('store/search-result', ['products' => $products]);
             return $view;
         }
 

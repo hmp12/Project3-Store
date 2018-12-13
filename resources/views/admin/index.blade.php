@@ -9,7 +9,7 @@
 
 	<body>
 		<div class=error></div>
-		@include ('common.nav-bar-store')
+		@include ('common.nav-bar-admin')
 		
 		<div id="wrapper">
 			@include ('common.side-bar-admin')

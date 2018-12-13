@@ -62,8 +62,6 @@ $(document).ready(function() {
 
 	$('#btn-add-cart').click(function() {
 		quanlity = parseInt($('#quanlity').val());
-		var username = $('#username').val();
-		var phone = $('#phone').val();
 		if (subProductId > 0) {
 			$.ajax({
 				url: public_path + "/store/cart/add",

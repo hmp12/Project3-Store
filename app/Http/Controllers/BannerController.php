@@ -9,7 +9,7 @@
 
     class BannerController extends Controller {
         public function showBanners(Request $request) {
-            $data['tab'] = 'banners-list';
+            $data['tab'] = 'banner-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;
@@ -75,7 +75,7 @@
 
         }
 
-        public function editBanner(Request $request) {
+        public function updateBanner(Request $request) {
             $tab = 'add-banner';
             $id = $request->id;
             $banner = Banner::where('id', $id)->first();

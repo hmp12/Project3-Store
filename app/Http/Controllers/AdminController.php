@@ -6,6 +6,8 @@
     use App\Models\Category;
     use App\Models\Product;
     use App\Models\Photo;
+    use App\Models\Banner;
+    use App\Models\Order;
     use App\Models\User;
 
 
@@ -16,9 +18,10 @@
         public function showDashboard() {
             $tab = 'dashboard';
             $usersCount = User::count();
-            $postsCount = 0;
+            $ordersCount = Order::count();
             $productsCount = Product::count();
             $photosCount = Photo::count();
+            $bannersCount = Banner::count();
             $categoriesCount = Category::count();
 
             $data = get_defined_vars();

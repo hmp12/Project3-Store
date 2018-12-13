@@ -41,16 +41,16 @@ Route::get('/admin/category', 'CategoryController@showCategories');
 Route::get('/admin/category/page/{page}', 'CategoryController@showCategories');
 Route::get('/admin/category/add', 'CategoryController@addCategory');
 Route::post('/admin/category/add', 'CategoryController@addCategory');
-Route::get('/admin/category/edit/{id}', 'CategoryController@editCategory');
-Route::post('/admin/category/edit/{id}', 'CategoryController@editCategory');
+Route::get('/admin/category/edit/{id}', 'CategoryController@updateCategory');
+Route::post('/admin/category/edit/{id}', 'CategoryController@updateCategory');
 Route::post('/admin/category/delete', 'CategoryController@deleteCategories');
 
 Route::get('/admin/product', 'ProductController@showProducts');
 Route::get('/admin/product/page/{page}', 'ProductController@showProducts');
 Route::get('/admin/product/add', 'ProductController@addProduct');
 Route::post('/admin/product/add', 'ProductController@addProduct');
-Route::get('/admin/product/edit/{id}', 'ProductController@editProduct');
-Route::post('/admin/product/edit/{id}', 'ProductController@editProduct');
+Route::get('/admin/product/edit/{id}', 'ProductController@updateProduct');
+Route::post('/admin/product/edit/{id}', 'ProductController@updateProduct');
 Route::post('/admin/product/delete', 'ProductController@deleteProducts');
 Route::get('/admin/product/delete', 'ProductController@deleteProducts');
 
@@ -58,18 +58,18 @@ Route::get('/admin/product/delete', 'ProductController@deleteProducts');
 Route::get('/admin/product/edit/{id}/subproduct', 'SubProductController@showSubProducts');
 Route::get('/admin/product/edit/{id}/subproduct/add', 'SubProductController@addSubProduct');
 Route::post('/admin/product/edit/{id}/subproduct/add', 'SubProductController@addSubProduct');
-Route::get('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct');
-Route::post('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct');
+Route::get('/admin/subproduct/edit/{id}', 'SubProductController@updateSubProduct');
+Route::post('/admin/subproduct/edit/{id}', 'SubProductController@updateSubProduct');
 
 Route::get('/admin/user', 'UserController@showUsers');
 Route::get('/admin/user/page/{page}', 'UserController@showUsers');
-Route::get('/admin/user/edit/{id}', 'UserController@editUser');
-Route::post('/admin/user/edit/{id}', 'UserController@editUser');
+Route::get('/admin/user/edit/{id}', 'UserController@updateUser');
+Route::post('/admin/user/edit/{id}', 'UserController@updateUser');
 Route::post('/admin/user/delete', 'UserController@deleteUsers');
 
 Route::get('/admin/post', 'PostController@showPost');
-Route::get('/admin/post/edit/{id}', 'PostController@editPost');
-Route::post('/admin/post/edit/{id}', 'PostController@editPost');
+Route::get('/admin/post/edit/{id}', 'PostController@updatePost');
+Route::post('/admin/post/edit/{id}', 'PostController@updatePost');
 
 Route::get('/admin/photo', 'PhotoController@showPhotos');
 Route::get('/admin/photo-choose', 'PhotoController@showPhotosToChoose');
@@ -85,8 +85,8 @@ Route::get('/admin/banner', 'BannerController@showBanners');
 Route::get('/admin/banner/page/{page}', 'BannerController@showBanners');
 Route::get('/admin/banner/add', 'BannerController@addBanner');
 Route::post('/admin/banner/add', 'BannerController@addBanner');
-Route::get('/admin/banner/edit/{id}', 'BannerController@editBanner');
-Route::post('/admin/banner/edit/{id}', 'BannerController@editBanner');
+Route::get('/admin/banner/edit/{id}', 'BannerController@updateBanner');
+Route::post('/admin/banner/edit/{id}', 'BannerController@updateBanner');
 Route::post('/admin/banner/delete', 'BannerController@deleteBanners');
 
 

@@ -11,7 +11,7 @@
 
     class UserController extends Controller {
         public function showUsers(Request $request) {
-            $data['tab'] = 'users-list';
+            $data['tab'] = 'user-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;
@@ -34,7 +34,7 @@
             return $view;
         }
 
-        public function editUser(Request $request) {
+        public function updateUser(Request $request) {
             $tab = 'edit-user';
             $id = $request->id;
             $user = User::where('id', $id)->first();

@@ -10,7 +10,7 @@
 
     class OrderController extends Controller {
         public function showOrders(Request $request) {
-            $data['tab'] = 'orders-list';
+            $data['tab'] = 'order-manage';
             $page = 1;
             if (isset($request->page)) {
                 $page = $request->page;
