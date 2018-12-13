@@ -18,30 +18,10 @@
 			<li class="fa fa-chevron-right">
 		</div>
 		<div class=dots>
-
 			@for ($i=0;$i<(count($banners));$i++) 
 				<span class=dot></span>
 			@endfor
-
 		</div>
-	</div>
-	<div class="news">
-		<div class="head">
-			<h3>Tin tức</h3>
-		</div>
-		<table>
-			@foreach ($posts as $post)
-				<!-- $imgUrl = $post['img_url'];
-				$img = '../php/getfile.php?url='.$imgUrl;
-				echo '
-					<tr class="new">
-						<th><img src="'.$img.'"></th>
-						<th><a href="../news/index.php?tab=post&v='.$post['id'].'"><h4>'.$post['title'].'</h4></a></th>
-					</tr>
-				'; -->
-			@endforeach
-
-		</table>
 	</div>
 </div>
 
@@ -73,33 +53,34 @@
 						<img src="{{ url('/') }}/public/{{ isset($imgUrls[0]) ? $imgUrls[0] : '' }}" class="image">
 						<div class="info">
 							<a href="{{ url('/') }}/store/product/{{ $product->id }}">
-								<p>{{ $product['name'] }}</p>
-								<h5 class="price">{{ $price }}đ</h5>
-								<div class="specs">
-									<table>
-										<tr>
-											<th>Màn hình</th>
-											<th>{{ (isset($product['display'])) ? $product['display'] : ''}}</th>
-										</tr>
-										<tr>
-											<th>OS</th>
-											<th>{{ (isset($product['os'])) ? $product['os'] : ''}}</th>
-										</tr>
-										<tr>
-											<th>CPU</th>
-											<th>{{ (isset($product['cpu'])) ? $product['cpu'] : ''}}</th>
-										</tr>
-										<tr>
-											<th>RAM</th>
-											<th>{{ (isset($product['ram'])) ? $product['ram'] : ''}}</th>
-										</tr>
-									</table>
+								<div>		
+									<p>{{ $product['name'] }}</p>
+									<h5 class="price">{{ $price }}đ</h5>
+									<div class="specs">
+										<table>
+											<tr>
+												<th>Màn hình</th>
+												<th>{{ (isset($product['display'])) ? $product['display'] : ''}}</th>
+											</tr>
+											<tr>
+												<th>OS</th>
+												<th>{{ (isset($product['os'])) ? $product['os'] : ''}}</th>
+											</tr>
+											<tr>
+												<th>CPU</th>
+												<th>{{ (isset($product['cpu'])) ? $product['cpu'] : ''}}</th>
+											</tr>
+											<tr>
+												<th>RAM</th>
+												<th>{{ (isset($product['ram'])) ? $product['ram'] : ''}}</th>
+											</tr>
+										</table>
+									</div>
 								</div>
 							</a>
 							<button value="{{ $product['id'] }}" class="btn btn-info btn-lg">So sánh</button>	
 						</div>
-					</div>	
-				
+					</div>				
 			@endforeach
 		@endif
 		</div>

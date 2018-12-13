@@ -7,7 +7,7 @@
 	</ol>
 	<div>
 		<button class="btn btn-success btn-lg" value="product" id="add"><i class="fa fa-plus"></i> Add</button>
-		<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-refresh"></i> Reload</button>
+		<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-sync-alt"></i> Reload</button>
 		<button class="btn btn-danger btn-lg" id="delete"><i class="fa fa-trash"></i> Delete</button>
 	</div>
 	<table class="table table-striped" id="table" style="width:100%">

@@ -13,22 +13,13 @@
 			</div>
 		</li>
 		<li><a href="{{ url('/') }}/user/logout" id="login_out">
-			<?php 
-				if (empty($user)) echo '<i class="fa fa-sign-in-alt"></i>';
-				else echo '<i class="fa fa-sign-out-alt"></i>';
-			?>
+			@if (session()->has('users'))
+				<i class="fa fa-sign-out-alt"></i>
+			@else
+				<i class="fa fa-sign-in-alt"></i>
+			@endif
 		</a></li>
 		<li id="noti"><i class="fa fa-bell"></i></li>
-		<li id="cart">
-			<i class="fa fa-shopping-cart"></i>
-			<div class="dropdown">
-			</div>
-		</li>
-		<li id="compare">
-			<i class="fa fa-columns"></i>
-			<div class="dropdown">
-			</div>
-		</li>
 		<li class="pt-2" id="search">
 			<input type="text" name="search" class="form-control float-right">
 			<div class="dropdown">

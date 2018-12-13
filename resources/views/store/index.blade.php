@@ -44,20 +44,6 @@
 			</div>
 			
 		</div>
-		<div class="support-box">
-			<button class="support-bt"><h4>Nhận hỗ trợ tự động</h4></button>
-			<div class="chat-box">
-				<div class="messages">
-					
-				</div>
-				<div class="input-box">
-					<form method="post" action="" onsubmit="return false;">
-						<input type="text" placeholder="Say someting" id="chat-input">
-						<button type="submit" id="send-bt">Gửi</button>
-					</form>
-				</div>
-			</div>
-		</div>
 		@include ('common.footer')
 		<script src="{{ asset('js/sb-admin.min.js') }}"></script>
 	</body>

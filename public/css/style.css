@@ -49,6 +49,9 @@ p {
 	margin-top: 1em;
 	margin-bottom: 0.5em;
 }
+a:hover {
+	text-decoration:none;
+}
 table, tr, th {
 	padding: 2%;
 }
@@ -155,6 +158,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 
 .btn-lg {
 	border-radius: 10px;
+	margin-top: 20px;
 	height: 50px;
 	min-width: 120px;
 }
@@ -415,19 +419,11 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	padding: 5% 5% 5%;
 }
 
-.login-box .btn {
-	margin-top: 20px;
-}
-
 .signup-box {
 	margin-top: 40px;
 	background-color: #ffffff;
 	box-shadow: 3px 3px 5px #888888;
 	padding: 3% 5% 3%;
-}
-
-.signup-box .btn {
-	margin-top: 20px;
 }
 
 .error {
@@ -557,14 +553,14 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	padding-left: 50px;
 }
 .banner-news {
-	height: 370px;
+	height: 470px;
 	width: 100%;
 	min-width: 1200px;
 	padding: 10px 0 20px;
 }
 .banners {
 	height: 100%;
-	width: 65%;
+	width: 95%;
 	background-color: #f1f1f1;
 	position: relative;
 	float: left;
@@ -694,7 +690,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 .item-box .info {
 	position: absolute;
 	width: 100%;
-	height: 30%;
+	height: 25%;
 	text-align: center;
 	transition: 0.5s;
 	bottom: 0;
@@ -706,7 +702,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	transition: 0.5s;
 }
 
-.item-box .button{
+.item-box .btn{
 	display: none;
 	font-size: 20px;
 	float: right;
@@ -719,7 +715,7 @@ input[type="checkbox"]:checked ~ .round-check:after {
 .item-box:hover .specs {
 	display: block;
 }
-.item-box:hover .button {
+.item-box:hover .btn {
 	display: block;
 }
 .item-box .specs th {
