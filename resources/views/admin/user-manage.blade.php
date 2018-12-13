@@ -16,7 +16,7 @@
 				<td><input type="checkbox" id="all"></td>
 				<td><strong>ID</strong></td>
 				<td><strong>Username</strong></td>
-				<td><strong>Fullname</strong></td>
+				<td><strong>Name</strong></td>
 				<td><strong>Email</strong></td>
 				<td><strong>Role</strong></td>
 				<td><strong>Tools</strong></td>
@@ -28,7 +28,7 @@
 					<td><input type="checkbox" value="{{ $user->id }}"></td>
 					<td>{{ $user->id }}</td>
 					<td>{{ $user->username }}</td>
-					<td>{{ $user->fullname }}</td>
+					<td>{{ $user->name }}</td>
 					<td>{{ $user->email }}</td>
 					<td>{{ $user->role_id }}</td>
 					<td>

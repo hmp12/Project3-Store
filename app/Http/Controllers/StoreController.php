@@ -9,8 +9,8 @@
     use App\Models\Post;
     use App\Models\Cart;
     use App\Models\User;
-
-
+    
+    use Auth;
     use View;
 
     class StoreController extends Controller {
@@ -27,8 +27,8 @@
         
         public function showCart(Request $request) {
             $product = array();
-            if ($request->session()->has('user')) {
-                $userId = $request->session()->get('user')->id;
+            if (Auth::check()) {
+                $userId = Auth::id();
                 $user = User::find($userId);
                 $carts = $user->carts;
             }
@@ -41,9 +41,9 @@
         }
 
         public function addCart(Request $request) {
-            if ($request->session()->has('user')) {
+            if (Auth::check()) {
                 $cart = new Cart();
-                $cart->user_id = $request->session()->get('user')->id;
+                $cart->user_id = Auth::id();
                 // $cart->product_id = $request->productId;
                 $cart->subProduct_id = $request->subProductId;
                 $cart->quanlity = $request->quanlity;

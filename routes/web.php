@@ -12,22 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/store');
 });
+
+Auth::routes();
 
 Route::get('/test', 'TestController@index');
 
 Route::get('/file', 'FileController@getData');
 
-Route::get('/user', function () {
-    return redirect('/user/login');     
+Route::get('/home', function () {
+    return redirect('/store');     
 });
-Route::get('/user/login', 'UserController@login');
-Route::post('/user/login', 'UserController@login');
-Route::get('/user/logout', 'UserController@logout');
-Route::get('/user/signup', 'UserController@signUp');
-Route::post('/user/signup', 'UserController@signUp');
-Route::get('/user/update', 'UserController@updateInfo');
+Route::get('/logout', 'UserController@logout');
+Route::get('/user/update', 'UserController@updateUserInfo');
+Route::post('/user/update', 'UserController@updateUserInfo');
 
 
 Route::get('/admin', function () {
@@ -108,8 +107,5 @@ Route::post('/store/cart/add', 'StoreController@addCart');
 
 Route::get('/store/purchase', 'PaymentController@purchase');
 Route::post('/store/purchase', 'PaymentController@purchase');
-
-
-Route::get('/store/chatbot', 'StoreController@index');
 
 Route::post('/store/product-filter', 'ProductController@getProductFilter');

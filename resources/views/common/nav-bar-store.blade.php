@@ -12,7 +12,7 @@
 			<div class="dropdown">
 			</div>
 		</li>
-		<li><a href="{{ url('/') }}/user/logout" id="login_out">
+		<li><a href="{{ route('logout') }}" id="login_out">
 			<?php 
 				if (empty($user)) echo '<i class="fa fa-sign-in-alt"></i>';
 				else echo '<i class="fa fa-sign-out-alt"></i>';

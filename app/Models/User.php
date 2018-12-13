@@ -6,7 +6,7 @@
     use Illuminate\Database\Eloquent\Model;
     
     class User extends Model {
-        protected $table = 'user';
+        protected $table = 'users';
 
         public function carts() {
             return $this->hasMany(Cart::Class);
@@ -20,21 +20,21 @@
             return $this->belongsTo(Role::Class);
         }
 
-        static function getUser($request, $username, $pass) {
+        static function getUser($request, $username, $password) {
             if (empty($username)) {
                 $request->session()->put('loginError', "Please enter your username");
                 return null;
 			}
-            if (empty($pass)) {
+            if (empty($password)) {
                 $request->session()->put('loginError', "Please enter your password");
                 return null;
             }
 
             
             if (User::where('username', $username)->count() > 0) {
-                if (User::where('pass', $pass)->count() > 0) {
+                if (User::where('password', $password)->count() > 0) {
                     $user = User::where('username', $username)
-                        ->where('pass', $pass)->first();
+                        ->where('password', $password)->first();
                     return $user;
                 }
                 else {

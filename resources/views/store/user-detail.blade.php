@@ -17,7 +17,7 @@
 		<i class="fa fa-id-card"> Cập nhật thông tin</i>
 	</a>
 @else
-	<a href="{{ url('/') }}/user/login">
+	<a href="{{ route('login') }}">
 		<i class="fa fa-sign-in"> Đăng nhập</i>
 	</a>
 @endIf

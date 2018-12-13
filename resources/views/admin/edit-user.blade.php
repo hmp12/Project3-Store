@@ -26,8 +26,8 @@
 		@csrf
 		<div class="row">
 			<div class="col-5">
-				<p>Fullname <span class="error">{{ (isset($fullnameError)) ? $fullnameError : '' }}</p>
-				<input type="text" class="form-control" width="900px" name="fullname" value="{{ (isset($fullname)) ? $fullname : '' }}" placeholder="Type fullname in here" class="text" id="fullname">
+				<p>Name <span class="error">{{ (isset($nameError)) ? $nameError : '' }}</p>
+				<input type="text" class="form-control" width="900px" name="name" value="{{ (isset($name)) ? $name : '' }}" placeholder="Type name in here" class="text" id="name">
 				<p>Username <span class="error">{{ (isset($usernameError)) ? $usernameError : '' }}</p>
 				<input type="text" class="form-control" name="username" value="{{ (isset($username)) ? $username : '' }}" placeholder="Type username in here" class="text" id="username">
 				<p>Email <span class="error">{{ (isset($emailError)) ? $emailError : '' }}</p>

@@ -15,7 +15,7 @@
         public function purchase(Request $request) {
             if ($request->isMethod('post')) {
                 if ($this->checkData($request)) {
-                    $userId = $request->session()->get('user')->id;
+                    $userId = Auth::id();
                     $user = User::find($userId);
                     $carts = $user->carts;
 

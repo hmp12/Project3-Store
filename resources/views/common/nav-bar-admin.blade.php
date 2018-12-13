@@ -12,7 +12,7 @@
 			<div class="dropdown">
 			</div>
 		</li>
-		<li><a href="{{ url('/') }}/user/logout" id="login_out">
+		<li><a href="{{ route('logout') }}" id="login_out">
 			@if (session()->has('users'))
 				<i class="fa fa-sign-out-alt"></i>
 			@else

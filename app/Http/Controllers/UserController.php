@@ -6,6 +6,8 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\DB;
     use App\Http\Controllers\Controller;
+    use Auth;
+    // use App\User;
     use App\Models\User;
     use App\Models\Role;
 
@@ -23,10 +25,10 @@
             $id = $request->id;
             $user = User::where('id', $id)->first();
             if (!empty($user)) {
-                $fullname = $user->fullname;
+                $name = $user->name;
                 $username= $user->username;
                 $email = $user->email;
-                $pass = $user->pass;
+                $password = $user->password;
                 $gender = $user->gender;
                 $roleId = $user->role_id;
 
@@ -36,17 +38,17 @@
             }
             
             if ($request->isMethod('post')) {
-                $fullname = $request->fullname;
+                $name = $request->name;
                 $username= $request->username;
                 $email = $request->email;
-                $pass = $request->pass;
+                $password = $request->password;
                 //$gender = $request->gender;
                 $roleId = $request->role;
 
                 $valid = True;
-                if (empty($fullname)) {
+                if (empty($name)) {
                     $valid = False;
-                    $fullnameError = "Fullname is empty";
+                    $nameError = "Fullname is empty";
                 }
 
                 if (empty($username)) {
@@ -59,9 +61,9 @@
                     $emailError = "Email is empty";
                 }
                 
-                if (empty($pass)) {
+                if (empty($password)) {
                     $valid = False;
-                    $passError = "Password is empty";
+                    $passwordError = "Password is empty";
                 }
 
                 if (empty($roleId)) {
@@ -69,10 +71,10 @@
                 }
                 
                 if ($valid) {
-                    $user->fullname = $fullname;
+                    $user->name = $name;
                     $user->username= $username;
                     $user->email = $email;
-                    $user->pass = $pass;
+                    $user->password = $password;
                     $user->gender = $gender;
                     $user->role_id = $roleId;
 
@@ -93,135 +95,174 @@
             User::destroy($ids);
         }
 
-        public function login(Request $request) {
-            if ($request->session()->has('user')) {
-                return redirect('/admin');
-            }
+        // public function login(Request $request) {
+        //     if ($request->session()->has('user')) {
+        //         return redirect('/store');
+        //     }
 
-            if ($request->isMethod('post')) {
-                $username = $request->input('username');
-                $pass = $request->input('pass');
-                $user = User::getUser($request, $username, $pass);
-                
-                if (!empty($user)) {
-                    $request->session()->put('user', $user);
-                    return redirect('/store');
-                }
-                else {
-                    $data['error'] = $request->session()->get('loginError');
-                    $data['user'] = $user;
-                    $data['pass'] = $pass;
-                }             
-            }
-            else {
-                $data = array();
-            }
+        //     if ($request->isMethod('post')) {
+        //         $username = $request->input('username');
+        //         $passwordword = $request->input('pass');
+        //         $user = User::getUser($request, $username, $passwordword);
+
+        //         if (!empty($user)) {
+        //             $request->session()->put('user', $user);
+        //             return redirect('/store');
+        //         }
+        //         else {
+        //             $data['error'] = $request->session()->get('loginError');
+        //             $data['user'] = $user;
+        //             $data['pass'] = $passwordword;
+        //         }             
+        //     }
+        //     else {
+        //         $data = array();
+        //     }
             
-            $view = View::make('user.login', $data);
-            return $view;
-        }
+        //     $view = View::make('user.login', $data);
+        //     return $view;
+        // }
 
         public function logout(Request $request) {
-            $request->session()->forget('user');
-            return redirect('/user');
+            Auth::logout();
+            return redirect('/login');
         }
 
-        public function signUp(Request $request) {
-            $valid = False;
+        // public function signUp(Request $request) {
+        //     $valid = False;
 
-            if ($request->isMethod('post')) {
-            	$valid = True;
-            	if (empty($request->fullname)) {
-            		$fullnameError = "Full name is required";
-            		$valid = False;
-            	}
-            	else {
-            		$fullname = $this->reForm($request->fullname);
-            		if (!preg_match("/^[a-zA-Z\s]*$/", $fullname)) {
-            			$fullnameError = "Only letter";
-            			$valid = False;
-            		}
-            	}
-            	if (empty($request->username)) {
-            		$usernameError = "User name is required";
-            		$valid = False;
-            	}
-            	else {
-            		$username = $this->reForm($request->username);
-            		if (!preg_match("/^[a-zA-Z0-9_]*$/", $username)) {
-            			$usernameError = "Only letter and number";
-            			$valid = False;
-                    }
-                    else if (User::where('username', $username)->count() > 0) {
-                        $usernameError = "Username has already existed";
-                        $valid = False;
-                    }
-            	}
-            	if (empty($request->email)) {
-            		$emailError = "Email is required";
-            		$valid = False;
-            	}
-            	else {
-            		$email = $this->reForm($request->email);
-            		 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            		 	$emailError = "Invalid email format"; 
-            		 	$valid = False;
-                     }
-                     else if (User::where('email', $email)->count() > 0) {
-                        $emailError = "This email has already used";
-                        $valid = False;
-                    }
-            	}
-            	if (empty($request->pass)) {
-            		$passError = "Password is required";
-            		$valid = False;
-            	}
-            	else {
-            		$pass = $this->reForm($request->pass);
-            		if (empty($request->rePass) || $request->rePass != $pass) {
-            			$rePassError = "Password not match";
-            			$valid = False;
-            		}
-            	}
-            	if (isset($request->gender)) {
-            		$gender = $request->gender;
-            	}       		
+        //     if ($request->isMethod('post')) {
+        //     	$valid = True;
+        //     	if (empty($request->name)) {
+        //     		$nameError = "Full name is required";
+        //     		$valid = False;
+        //     	}
+        //     	else {
+        //     		$name = $this->reForm($request->name);
+        //     		if (!preg_match("/^[a-zA-Z\s]*$/", $name)) {
+        //     			$nameError = "Only letter";
+        //     			$valid = False;
+        //     		}
+        //     	}
+        //     	if (empty($request->username)) {
+        //     		$usernameError = "User name is required";
+        //     		$valid = False;
+        //     	}
+        //     	else {
+        //     		$username = $this->reForm($request->username);
+        //     		if (!preg_match("/^[a-zA-Z0-9_]*$/", $username)) {
+        //     			$usernameError = "Only letter and number";
+        //     			$valid = False;
+        //             }
+        //             else if (User::where('username', $username)->count() > 0) {
+        //                 $usernameError = "Username has already existed";
+        //                 $valid = False;
+        //             }
+        //     	}
+        //     	if (empty($request->email)) {
+        //     		$emailError = "Email is required";
+        //     		$valid = False;
+        //     	}
+        //     	else {
+        //     		$email = $this->reForm($request->email);
+        //     		 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //     		 	$emailError = "Invalid email format"; 
+        //     		 	$valid = False;
+        //              }
+        //              else if (User::where('email', $email)->count() > 0) {
+        //                 $emailError = "This email has already used";
+        //                 $valid = False;
+        //             }
+        //     	}
+        //     	if (empty($request->password)) {
+        //     		$passwordError = "Password is required";
+        //     		$valid = False;
+        //     	}
+        //     	else {
+        //     		$password = $this->reForm($request->password);
+        //     		if (empty($request->rePass) || $request->rePass != $password) {
+        //     			$rePassError = "Password not match";
+        //     			$valid = False;
+        //     		}
+        //     	}
+        //     	if (isset($request->gender)) {
+        //     		$gender = $request->gender;
+        //     	}       		
             	
-            	if ($valid) { 
-                    $user = new User();
-                    $user->fullname = $fullname;
-                    $user->username = $username;
-                    $user->email = $email;
-                    $user->pass = $pass;
-                    $user->gender = $gender;
-                    $user->save();
+        //     	if ($valid) { 
+        //             $user = new User();
+        //             $user->name = $name;
+        //             $user->username = $username;
+        //             $user->email = $email;
+        //             $user->password = $password;
+        //             $user->gender = $gender;
+        //             $user->save();
 
-                    return redirect('/user/login');
-            	}
-            }
+        //             return redirect('/user/login');
+        //     	}
+        //     }
 
 
 
-            $data = get_defined_vars();
+        //     $data = get_defined_vars();
 
-            $view = View::make('user/signup', $data);
-            return $view;
-        }
+        //     $view = View::make('user/signup', $data);
+        //     return $view;
+        // }
 
-        function reForm($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
+        // function reForm($data) {
+        //     $data = trim($data);
+        //     $data = stripslashes($data);
+        //     $data = htmlspecialchars($data);
+        //     return $data;
+        // }
 
         public function showUser(Request $request) {
             $user = null;
-            if ($request->session()->has('user')) {
-                $user = $request->session()->get('user');
+            if (Auth::check()) {
+                $user = Auth::user();
             }
 
             $view = View::make('store.user-detail', ['user' => $user]);
+            return $view;
+        }
+
+        public function updateUserInfo(Request $request) {
+            $id = Auth::id();
+            $user = User::where('id', $id)->first();
+            if (!empty($user)) {
+                $name = $user->name;
+                $address = $user->address;
+                $phone = $user->phone;
+
+            }
+            else {
+                return "User is not exist";
+            }
+            
+            if ($request->isMethod('post')) {
+                $name = $request->name;
+                $address= $request->address;
+                $phone = $request->phone;
+
+                $valid = True;
+                if (empty($name)) {
+                    $valid = False;
+                    $nameError = "Fullname is empty";
+                }
+                
+                if ($valid) {
+                    $user->name = $name;
+                    $user->address= $address;
+                    $user->phone = $phone;
+
+                    $user->save();
+                }
+            }
+
+            $data = get_defined_vars();
+
+            $view = View::make('store/user-info-update', $data);
             return $view;
         }
     }
