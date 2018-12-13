@@ -1,5 +1,10 @@
 <div class="banners">
-	<h1>Banners</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin">Dashboard</a>
+		</li>
+		<li class="breadcrumb-item active">Banner</li>
+	</ol>
 	<div>
 		<button class="btn btn-success btn-lg" value="banner" id="add"><i class="fa fa-plus"></i> Add</button>
 		<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-refresh"></i> Reload</button>

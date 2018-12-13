@@ -1,7 +1,6 @@
 <div class="nar-bar">
-	<div class="blur-background"></div>
 	<ul class="float-left">
-		<li id="hide-side"><i class="fa fa-bars"></i></li>
+		<li id="sidebarToggle"><i class="fa fa-bars"></i></li>
 		<li id="logo"><a href="{{ url('/') }}/"><img height="50px" width="150px" src="{{ url('/') }}/img/gaugau4.png"></a></li>
 	</ul>
 

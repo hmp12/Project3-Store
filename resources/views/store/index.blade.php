@@ -8,8 +8,7 @@
 
 	<body>
 		<div class=error></div>
-		@include ('common.top-bar')
-		@include ('common.nar-bar-store')
+		@include ('common.nav-bar-store')
 		<div class="store page">
 			@include ('common.side-bar-store')
 			<div class="content">				

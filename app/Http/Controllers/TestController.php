@@ -3,10 +3,11 @@
 
     use Illuminate\Http\Request;
     use App\Http\Controllers\Controller;
+    
+    use App\Models\Category;
     use App\Models\Product;
-    use App\Models\SubProduct;
     use App\Models\Photo;
-    use App\Models\Spec;
+    use App\Models\User;
 
     use View;
 

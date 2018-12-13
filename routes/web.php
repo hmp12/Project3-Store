@@ -37,6 +37,8 @@ Route::get('/admin', function () {
 
 Route::get('/admin/dashboard', 'AdminController@showDashboard');
 
+
+
 Route::get('/admin/product', 'ProductController@showProducts');
 Route::get('/admin/product/page/{page}', 'ProductController@showProducts');
 Route::get('/admin/product/add', 'ProductController@addProduct');

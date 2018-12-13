@@ -1,5 +1,10 @@
 <div class="photos">
-	<h1>Photos</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin">Dashboard</a>
+		</li>
+		<li class="breadcrumb-item active">Photo</li>
+	</ol>
 		<div>
 			<button class="btn btn-success btn-lg" value="photo" id="add"><i class="fa fa-plus"></i> Add</button>
 			<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-refresh"></i> Reload</button>
