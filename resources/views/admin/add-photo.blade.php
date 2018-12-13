@@ -1,5 +1,13 @@
 <div>
-	<h1>Add Photos</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin">Dashboard</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin/photo">Photo</a>
+		</li>
+		<li class="breadcrumb-item active">Add</li>
+	</ol>
 	<button class="btn btn-basic btn-lg" value="photo" id="back">Back</button>
 	<p class="success">{{ isset($successFiles) ? 'There files upload successfully: '.$successFiles : ''}}</p>
 

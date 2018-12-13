@@ -13,11 +13,21 @@
 	</div>
 
 	<div class="edit-product">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ url('/') }}/admin">Dashboard</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="{{ url('/') }}/admin/product">Product</a>
+			</li>
+			
 		@if (!empty($id))
-			<h1>Edit product</h1>
+			<li class="breadcrumb-item active">Edit</li>
+		</ol>
 			<a href="./{{ $id }}/subproduct"><button class="btn btn-primary btn-lg">SubProduct</button></a>
 		@else
-			<h1>Add product</h1>
+			<li class="breadcrumb-item active">Add</li>
+		</ol>
 		@endif
 		<button class="btn btn-basic btn-lg" value="product" id="back">Back</button>
 		<form action="" enctype="multipart/form-data" method="post">

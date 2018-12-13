@@ -1,4 +1,4 @@
-<div class="banners">
+<div class="">
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="{{ url('/') }}/admin">Dashboard</a>
@@ -34,3 +34,10 @@
 		@endforeach
 	</table>
 </div>
+<ul class="pagination justify-content-center">
+	@for ($i = 1; $i < $maxPage; $i++)
+		<li class="page-item {{ $i == $page ? 'active' : '' }}">
+			<a href="{{ url('/') }}/admin/banner/page/{{ $i }}" class="page-link">{{ $i }}</a>
+		</li>
+	@endfor
+</ul>

@@ -82,6 +82,7 @@
                 }
             }
 
+            $product = Product::where('id', $productId)->first();
             $data = get_defined_vars();
 
             $view = View::make('admin/index', $data);
@@ -143,6 +144,7 @@
                 }
             }
 
+            $product = $subProduct->product;
             $data = get_defined_vars();
 
             $view = View::make('admin/index', $data);

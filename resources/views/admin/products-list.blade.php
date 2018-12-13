@@ -16,12 +16,12 @@
 			<td><strong>ID</strong></td>
 			<td><strong>Name</strong></td>
 			<td><strong>Price</strong></td>
-			<td><strong>Categories</strong></td>
+			<td><strong>Category</strong></td>
 			<td><strong>Tools</strong></td>
 		</tr>
 		@foreach ($products as $product)
 			@php
-				$category = $product->category->label;
+				$category = $product->category->name;
 				$price = number_format($product->price);
 			@endphp
 			<tr>

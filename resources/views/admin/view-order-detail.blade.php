@@ -1,5 +1,13 @@
 <div class="orderDetail-detail">
-	<h1>Order Detail</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin">Dashboard</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin/order">Order</a>
+		</li>
+		<li class="breadcrumb-item active">Detail</li>
+	</ol>
 	<div>
         <h4>Order ID: {{ $orderDetails[0]->order->id }}</h4>
         <h5>User: {{ $orderDetails[0]->order->user->username }}</h5>

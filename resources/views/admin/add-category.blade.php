@@ -13,11 +13,20 @@
 	</div>
 
 	<div class="edit-category">
-		@if (!empty($id))
-			<h1>Edit category</h1>
-			@else
-			<h1>Add category</h1>
-		@endif
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ url('/') }}/admin">Dashboard</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="{{ url('/') }}/admin/category">Category</a>
+			</li>
+			@if (!empty($id))
+				<li class="breadcrumb-item active">Edit</li>
+				@else
+				<li class="breadcrumb-item active">Add</li>
+			@endif
+		</ol>
+		
 		<button class="btn btn-basic btn-lg" value="category" id="back">Back</button>
 		<form action="" enctype="multipart/form-data" method="post">
 			@csrf

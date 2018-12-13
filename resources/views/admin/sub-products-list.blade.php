@@ -1,5 +1,16 @@
 <div class="subProducts">
-	<h1>{{ $product->name }}</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin">Dashboard</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin/product">Product</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a href="{{ url('/') }}/admin/product/edit/{{ $product->id }}">{{ $product->name }}</a>
+		</li>
+		<li class="breadcrumb-item active">Subproduct</li>
+	</ol>
 	<div>
 		<button class="btn btn-success btn-lg" value="subproduct" id="add"><i class="fa fa-plus"></i> Add</button>
 		<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-refresh"></i> Reload</button>

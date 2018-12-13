@@ -62,6 +62,7 @@ Route::get('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct')
 Route::post('/admin/subproduct/edit/{id}', 'SubProductController@editSubProduct');
 
 Route::get('/admin/user', 'UserController@showUsers');
+Route::get('/admin/user/page/{page}', 'UserController@showUsers');
 Route::get('/admin/user/edit/{id}', 'UserController@editUser');
 Route::post('/admin/user/edit/{id}', 'UserController@editUser');
 Route::post('/admin/user/delete', 'UserController@deleteUsers');
@@ -77,9 +78,11 @@ Route::get('/admin/photo/add', 'PhotoController@addPhoto');
 Route::post('/admin/photo/add', 'PhotoController@addPhoto');
 
 Route::get('/admin/order', 'OrderController@showOrders');
+Route::get('/admin/order/page/{page}', 'OrderController@showOrders');
 Route::get('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
 
 Route::get('/admin/banner', 'BannerController@showBanners');
+Route::get('/admin/banner/page/{page}', 'BannerController@showBanners');
 Route::get('/admin/banner/add', 'BannerController@addBanner');
 Route::post('/admin/banner/add', 'BannerController@addBanner');
 Route::get('/admin/banner/edit/{id}', 'BannerController@editBanner');
