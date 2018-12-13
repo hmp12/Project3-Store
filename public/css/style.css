@@ -293,9 +293,8 @@ input[type="checkbox"]:checked ~ .round-check:after {
 }
 .nar-bar #logo {
 	height: 50px;
-	width: 150px;
-	background: url('../img/713.svg');
-	background-color: #354458;
+	width: 135px;
+	background-color: #212529;
 }
 .nar-bar #logo:hover {
 	background-color: #f1f1f1;
@@ -310,6 +309,10 @@ input[type="checkbox"]:checked ~ .round-check:after {
 	position: relative;
 	transition: 0.5s;
 	-webkit-transition: 0.5s;
+}
+
+#sidebarToggle {
+	width: 90px!important;
 }
 #search input:focus {
 	width: 100%;

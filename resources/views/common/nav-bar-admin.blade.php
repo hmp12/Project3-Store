@@ -1,17 +1,11 @@
 <div class="nar-bar">
 	<ul class="float-left">
 		<li id="sidebarToggle"><i class="fa fa-bars"></i></li>
-		<li id="logo"><a href="{{ url('/') }}/"><img height="50px" width="150px" src="{{ url('/') }}/img/gaugau4.png"></a></li>
 	</ul>
 
 	<ul class="float-right">
 		<li id="hide-top"><i class="fa fa-chevron-up"></i></li>
 		<li id="show-top"><i class="fa fa-chevron-down"></i></li>
-		<li id="user">
-			<img height="60%" width="60%" src="{{ url('/') }}/img/user.svg">
-			<div class="dropdown">
-			</div>
-		</li>
 		<li><a href="{{ route('logout') }}" id="login_out">
 			@if (Auth::check())
 				<i class="fa fa-sign-out-alt"></i>

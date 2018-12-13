@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Gâu Gâu Admin</title>
+		<title>Admin</title>
 		@include ('common.head')
 		<link href="{{ asset('css/sb-admin.min.css') }}" rel="stylesheet">
 		<script type="text/javascript" src="{{ asset('js/admin.js') }}"></script>
