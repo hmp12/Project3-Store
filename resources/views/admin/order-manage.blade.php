@@ -18,6 +18,7 @@
 				<td><strong>Username</strong></td>
 				<td><strong>Fullname</strong></td>
 				<td><strong>Total</strong></td>
+				<td><strong>Status</strong></td>
 				<td><strong>Tools</strong></td>
 			</tr>
 		</thead>
@@ -29,6 +30,7 @@
 					<td>{{ $order->user->username }}</td>
 					<td>{{ $order->user->fullname }}</td>
 					<td>{{ $order->total }}</td>
+					<td>{{ $order->status == 0 ? 'waiting' : 'delivered' }}</td>
 					<td>
 						<button value="{{ $order->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-eye"></i></button>
 						<button value="{{ $order->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></button>

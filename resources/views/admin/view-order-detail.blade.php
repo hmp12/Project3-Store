@@ -9,11 +9,35 @@
 		<li class="breadcrumb-item active">Detail</li>
 	</ol>
 	<div>
-        <h4>Order ID: {{ $orderDetails[0]->order->id }}</h4>
-        <h5>User: {{ $orderDetails[0]->order->user->username }}</h5>
-        <h5>Name: {{ $orderDetails[0]->order->user->fullname }}</h5>
-        <h5>Address: {{ $orderDetails[0]->order->address }}</h5>
-    </div>
+		<h4>Order ID: {{ $orderDetails[0]->order->id }}</h4>
+		<div class="row">
+			<div class="col-3">
+				<p>User: {{ $orderDetails[0]->order->user->username }}</p>
+				<p>Name: {{ $orderDetails[0]->order->user->name }}</p>
+				<p>Email: {{ $orderDetails[0]->order->user->email }}</p>
+			</div>
+			<div class="col-3">
+				<p>Shipping Address: {{ $orderDetails[0]->order->address }}</p>
+				<p>Bill Address: {{ $orderDetails[0]->order->user->address }}</p>
+				<p>Phone: {{ $orderDetails[0]->order->user->phone }}</p>
+			</div>
+			<div class="col-5">
+				<form action="" enctype="multipart/form-data" method="post">
+					@csrf
+					<div class="form-group row">
+						<label for="status" class="col-md-4 col-form-label text-md-right">Status</label>
+						<div class="col-md-6">
+							<select name="status" class="form-control" class="text">
+								<option value="0" {{ $status == 0 ? 'selected' : ''}}>Waiting</option>
+								<option value="1" {{ $status == 1 ? 'selected' : ''}}>Delivered</option>
+							</select>	
+							<input type="submit" value="Update" class="btn btn-success btn-lg">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
     <h4>List Product: </h4>
 	<table class="table">
 		<tr>
@@ -34,7 +58,6 @@
 				<td>{{ $orderDetail->quanlity }}</td>                
 				<td>{{ number_format($orderDetail->subProduct->price*$orderDetail->quanlity) }}</td>
 				<td>
-					<button value="{{ $orderDetail->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-eye"></i></button>
 					<button value="{{ $orderDetail->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></button>
 				</td>
 			</tr>				

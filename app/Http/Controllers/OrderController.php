@@ -4,7 +4,6 @@
     use Illuminate\Http\Request;
     use App\Http\Controllers\Controller;
     use App\Models\Order;
-    use App\Models\OrderDetail;
 
     use View;
 
@@ -21,8 +20,17 @@
             $data['tab'] = 'view-order-detail';
             $orderId = $request->id;
 
-            $orderDetails = OrderDetail::where("order_id", $orderId)->get();
-            $data['orderDetails'] = $orderDetails;
+            $order = Order::find($orderId);
+            $data['orderDetails'] = $order->orderDetails;
+
+            if ($request->isMethod('post')) {
+                if (!empty($request->status)) {
+                    $order->status = $request->status;
+                    $order->save();
+                }
+            }
+
+            $data['status'] = $order->status;
 
             $view = View::make('admin/index', $data);
             return $view;

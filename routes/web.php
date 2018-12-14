@@ -77,6 +77,7 @@ Route::middleware(['checkAdmin'])->group(function () {
     Route::get('/admin/order', 'OrderController@showOrders');
     Route::get('/admin/order/page/{page}', 'OrderController@showOrders');
     Route::get('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
+    Route::post('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
 
     Route::get('/admin/banner', 'BannerController@showBanners');
     Route::get('/admin/banner/page/{page}', 'BannerController@showBanners');
