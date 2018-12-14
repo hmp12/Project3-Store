@@ -31,8 +31,7 @@
 		@endif
 		<button class="btn btn-basic btn-lg" value="product" id="back">Back</button>
 		<form action="" enctype="multipart/form-data" method="post">
-			@csrf
-		
+			@csrf		
 			<div class="row">
 				<div class="col-5">
 					<p>Name <span class="error">{{ (isset($nameError)) ? $nameError : '' }}</p>

@@ -12,7 +12,7 @@
 		@include ('common.nav-bar-store')
 		<div id="wrapper">
 			@include ('common.side-bar-store')
-			<div class="content-warpper store">				
+			<div class="content-wrapper store">				
 				<script type="text/javascript">
 					var user_id = "{{ isset($user) ? $user->id : 0 }}";
 					var tab = "{{ $tab }}";

@@ -76,8 +76,8 @@ Route::middleware(['checkAdmin'])->group(function () {
 
     Route::get('/admin/order', 'OrderController@showOrders');
     Route::get('/admin/order/page/{page}', 'OrderController@showOrders');
-    Route::get('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
-    Route::post('/admin/order/edit/{id}', 'OrderController@viewOrderDetail');
+    Route::get('/admin/order/edit/{id}', 'OrderController@updateOrderDetail');
+    Route::post('/admin/order/edit/{id}', 'OrderController@updaterderDetail');
 
     Route::get('/admin/banner', 'BannerController@showBanners');
     Route::get('/admin/banner/page/{page}', 'BannerController@showBanners');
@@ -107,5 +107,8 @@ Route::post('/store/cart/add', 'StoreController@addCart');
 
 Route::get('/store/purchase', 'PaymentController@purchase');
 Route::post('/store/purchase', 'PaymentController@purchase');
+
+Route::get('/store/order', 'OrderController@showOrdersByUser');
+Route::get('/store/order/{id}', 'OrderController@viewOrderDetail');
 
 Route::post('/store/product-filter', 'ProductController@getProductFilter');

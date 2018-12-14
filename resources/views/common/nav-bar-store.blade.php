@@ -18,7 +18,11 @@
 				<i class="fa fa-sign-in-alt"></i>
 			@endif
 		</a></li>
-		<li id="noti"><i class="fa fa-bell"></i></li>
+		<li id="noti">
+			<a href="{{ url('/') }}/store/order">
+				<i class="fa fa-money-check-alt"></i>
+			</a>
+		</li>
 		<li id="cart">
 			<i class="fa fa-shopping-cart"></i>
 			<div class="dropdown">
