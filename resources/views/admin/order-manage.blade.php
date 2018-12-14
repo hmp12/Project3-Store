@@ -28,7 +28,7 @@
 					<td><input type="checkbox" value="{{ $order->id }}"></td>
 					<td>{{ $order->id }}</td>
 					<td>{{ $order->user->username }}</td>
-					<td>{{ $order->user->fullname }}</td>
+					<td>{{ $order->user->name }}</td>
 					<td>{{ $order->total }}</td>
 					<td>{{ $order->status == 0 ? 'waiting' : 'delivered' }}</td>
 					<td>
