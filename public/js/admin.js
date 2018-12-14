@@ -15,9 +15,6 @@ $(document).ready(function() {
 		trimValue: true
 	});
 	
-	$('#movie_tags').tagsinput({
-		trimValue: true
-	});
 	$('.bootstrap-tagsinput input').focus(function() {
 		$(this).val($('#title').val().trim().toLowerCase().replace(/ /g, ','));
 	});
@@ -72,8 +69,9 @@ $(document).ready(function() {
 			location.reload();
 		}
 	});
-	
-	$('.edit').click(function() {
+
+	//$('.edit').click(function() {
+	$('tbody').on('click', '.edit', function () {
 		var id = [];
 		id = $(this).val();
 		location.replace(public_path + "/admin/" + $('#add').val() + '/edit/' + id);
@@ -165,7 +163,7 @@ $(document).ready(function() {
 	});
 
 	$('#remove').click(function() {
-		$('#pre_img').attr("src", '../img/default.png');
+		$('#pre_img').attr("src", public_path + '/img/default.png');
 		$('#pre_img').attr("height", '200px');
 		$('.pre_img').each(function(i) {
 			$(this).remove();
@@ -176,34 +174,4 @@ $(document).ready(function() {
 	$('.close').click(function() {
 		$('.modal').hide();
 	});
-
-
-	$('#pre_rate').click(function() {
-		$('.status').slideDown();
-		
-		var iter = $('#iter').val();
-		if (iter == '') {
-			iter = 100;
-		}
-		console.log(iter);
-		$.ajax({
-			url: "../pre_rates/run_mf.php",
-			type: 'GET',
-			data: {
-				iter: iter
-			},
-			success: function(data) {
-				//$('.status').html(data);
-			},
-			error: function() {
-				alert("Something wrong, please try again");
-			}
-		});
-
-		var reload = setInterval(
-			function(){
-				$('.status').load('../pre_rates/status.txt');
-			}, 1000);
-	});
-
 });

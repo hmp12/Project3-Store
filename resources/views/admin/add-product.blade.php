@@ -7,7 +7,7 @@
 			<div class="modal-body">
 			</div>
 			<div class="modal-footer">
-				<button class="button" id="choose">Choose</button>
+				<button class="btn btn-primary btn-lg" id="choose">Choose</button>
 			</div>
 		</div>
 	</div>
@@ -65,7 +65,7 @@
 							<img src="{{ url('/').'/'.$photo->url }}" height="100px" class="pre_img">
 						@endforeach
 					@else
-						<img src="{{ url('/').'/img/default.png' }}" height="220px" class="block" id="pre_img">	
+						<img src="{{ url('/') }}/img/default.png" height="220px" class="block" id="pre_img">	
 					@endif
 					<div>
 						<input type="button" value="Choose" class="btn btn-primary btn-lg float-left" id="ch_img">

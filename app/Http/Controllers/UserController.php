@@ -28,8 +28,6 @@
                 $name = $user->name;
                 $username= $user->username;
                 $email = $user->email;
-                $password = $user->password;
-                $gender = $user->gender;
                 $roleId = $user->role_id;
 
             }
@@ -41,8 +39,6 @@
                 $name = $request->name;
                 $username= $request->username;
                 $email = $request->email;
-                $password = $request->password;
-                //$gender = $request->gender;
                 $roleId = $request->role;
 
                 $valid = True;
@@ -60,11 +56,6 @@
                     $valid = False;
                     $emailError = "Email is empty";
                 }
-                
-                if (empty($password)) {
-                    $valid = False;
-                    $passwordError = "Password is empty";
-                }
 
                 if (empty($roleId)) {
                     $roleId = 0;
@@ -74,8 +65,6 @@
                     $user->name = $name;
                     $user->username= $username;
                     $user->email = $email;
-                    $user->password = $password;
-                    $user->gender = $gender;
                     $user->role_id = $roleId;
 
                     $user->save();

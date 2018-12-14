@@ -30,22 +30,9 @@
         }
 
         public function showPhotosToChoose(Request $request) {
-            $page = 1;
-            if (isset($request->page)) {
-                $page = $request->page;
-            }
-            $photos = Photo::all();
+            $data['photos'] = Photo::all();
 
-            $photosPerPage = 20;
-            $data['maxPage'] = count($photos)/$photosPerPage;
-
-            $data['photos'] = array();
-            for ($i = ($page-1)*$photosPerPage; $i < $page*$photosPerPage; $i++) {
-                $data['photos'][] = $photos[$i];
-            }
-            $data['page'] = $page;
-
-            $view = View::make('admin/photos-list', $data);
+            $view = View::make('admin/photo-choose', $data);
             return $view;
         }
 
