@@ -26,7 +26,7 @@
 
             $revenue = array();
             for ($month=1;$month<=12;$month++) {
-                $revenue[$month] = Order::whereYear('created_at', '=', '2018')
+                $revenue[$month] = Order::whereYear('created_at', '=', date('Y'))
                                 ->whereMonth('created_at', '=', $month)
                                 ->sum('total')/1000000;
             }
