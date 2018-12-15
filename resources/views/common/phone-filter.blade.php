@@ -5,7 +5,7 @@
 		<option value="4">Laptop</option>
 		<option value="5">Tablet</option>
 	</select>
-	<label><i class="fa fa-apple"></i></label>
+	<label><i class="fab fa-apple"></i></label>
 	<select name="" class="filter" id="branch">
 		<option value="0" selected>Hãng</option>
 		<option value="apple">Apple</option>
@@ -16,7 +16,7 @@
 		<option value="oppo">Oppo</option>
 		<option value="htc">Htc</option>
 	</select>
-	<label><i class="fa fa-usd"></i></label>
+	<label><i class="fa fa-dollar-sign"></i></label>
 	<select name="" class="filter" id="price">
 		<option value="0" selected>Giá</option>
 		<option value="1"><= 5.000.000đ</option>
@@ -24,14 +24,14 @@
 		<option value="3">10 - 15.000.000đ</option>
 		<option value="4">> 15.000.000đ</option>
 	</select>
-	<label><i class="fa fa-android"></i></label>
+	<label><i class="fab fa-android"></i></label>
 	<select name="" class="filter" id="os">
 		<option value="0" selected>OS</option>
 		<option value="ios">IOS</option>
 		<option value="android 7">Android 7</option>
 		<option value="android">Android 5-7</option>
 	</select>
-	<label><i class="fa fa-television"></i></label>
+	<label><i class="fas fa-tv"></i></label>
 	<select name="" class="filter" id="display">
 		<option value="0" selected>Màn hình</option>
 		<option value=" hd">HD</option>

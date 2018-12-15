@@ -83,9 +83,9 @@
 			<div class="row">
 				<table class="col-8">
 					<tr>
-						<th><i class="fa fa-television"></i></th>
+						<th><i class="fa fa-tv"></i></th>
 						<th><input type="text" class="form-control" name="display" value="{{ (isset($display)) ? $display : '' }}" placeholder="Display" class="text"></th>
-						<th><i class="fa fa-android"></i></th>
+						<th><i class="fab fa-android"></i></th>
 						<th><input type="text" class="form-control" name="os" value="{{ (isset($os)) ? $os : '' }}" placeholder="OS" class="text"></th>
 					</tr>
 					<tr>
@@ -95,7 +95,7 @@
 						<th><input type="text" class="form-control" name="bcam" value="{{ (isset($bcam)) ? $bcam : '' }}" placeholder="Back Cam" class="text"></th>
 					</tr>
 					<tr>
-						<th><i class="fa fa-tachometer"></th>
+						<th><i class="fa fa-tachometer-alt"></th>
 						<th><input type="text" class="form-control" name="cpu" value="{{ (isset($cpu)) ? $cpu : '' }}" placeholder="CPU" class="text"></th>
 						<th><i class="fa fa-film"></th>
 						<th><input type="text" class="form-control" name="gpu" value="{{ (isset($gpu)) ? $gpu : '' }}" placeholder="GPU" class="text"></th>
@@ -103,7 +103,7 @@
 					<tr>
 						<th><i class="fa fa-microchip"></th>
 						<th><input type="text" class="form-control" name="ram" value="{{ (isset($ram)) ? $ram : '' }}" placeholder="RAM" class="text"></th>
-						<th><i class="fa fa-hdd-o"></th>
+						<th><i class="fas fa-hdd"></th>
 						<th><input type="text" class="form-control" name="memory" value="{{ (isset($memory)) ? $memory : '' }}" placeholder="Memory" class="text"></th>
 					</tr>
 					<tr>
@@ -113,13 +113,13 @@
 						<th><input type="text" class="form-control" name="sim" value="{{ (isset($sim)) ? $sim : '' }}" placeholder="Sim" class="text"></th>
 					</tr>
 					<tr>
-						<th><i class="fa fa-battery"></i></th>
+						<th><i class="fa fa-battery-full"></i></th>
 						<th><input type="text" class="form-control" name="battery" value="{{ (isset($battery)) ? $battery : '' }}" placeholder="Battery" class="text"></th>
 						<th><i class="fa fa-rss"></th>
 						<th><input type="text" class="form-control" name="connect" value="{{ (isset($connect)) ? $connect : '' }}" placeholder="Connection" class="text"></th>
 					</tr>
 					<tr>
-						<th><i class="fa fa-diamond"></i></th>
+						<th><i class="fa fa-palette"></i></th>
 						<th><input type="text" class="form-control" name="color" value="{{ (isset($color)) ? $color : '' }}" placeholder="Color" class="text"></th>
 						<th><i class="fa fa-truck"></th>
 						<th><input type="text" class="form-control" name="weight" value="{{ (isset($weight)) ? $weight : '' }}" placeholder="Weight" class="text"></th>
