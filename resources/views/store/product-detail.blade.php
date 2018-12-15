@@ -79,7 +79,7 @@
 					</span></p>
 				</div>
 				<button class="cart-button" id="btn-cart"><h2><i class="fa fa-cart-arrow-down"></i> Giỏ hàng</h2></button>
-				<button value="{{ $id }}" class="compare-button compare"><h2><i class="fa fa-columns"></i> So sánh</h2></button>
+				<button value="{{ $id }}" class="compare-button btn-compare"><h2><i class="fa fa-columns"></i> So sánh</h2></button>
 				<div class="spec">
 					<div class="head">
 					<h4>Thông số kỹ thuật</h4>

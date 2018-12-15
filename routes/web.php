@@ -99,6 +99,7 @@ Route::post('/store/search', 'ProductController@search');
 Route::get('/store/compare-list', 'StoreController@showCompareProducts');
 Route::post('/store/add-compare', 'StoreController@addCompareProduct');
 Route::post('/store/delete-compare', 'StoreController@deleteCompareProduct');
+Route::get('/store/compare-page', 'StoreController@showCompareProductsTable');
 
 Route::post('/store/user', 'UserController@showUser');
 Route::post('/store/cart', 'StoreController@showCart');

@@ -63,6 +63,14 @@
             return $view;
         }
 
+        public function showCompareProductsTable(Request $request) {
+            $data['tab'] = 'compare-page';
+            $data['products'] = $request->session()->get('compareProducts');
+
+            $view = View::make('store/index', $data);
+            return $view;
+        }
+
         public function addCompareProduct(Request $request) {
             $id = $request->id;
 

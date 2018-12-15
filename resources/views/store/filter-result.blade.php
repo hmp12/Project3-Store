@@ -38,7 +38,7 @@
 						</table>
 					</div>
 				</a>
-				<button value="{{ $product['id'] }}" class="btn btn-info btn-lg">So sánh</button>	
+				<button value="{{ $product['id'] }}" class="btn btn-primary btn-lg btn-compare">So sánh</button>	
 			</div>
 		</div>
 	@endforeach

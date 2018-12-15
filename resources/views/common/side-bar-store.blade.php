@@ -6,12 +6,12 @@
 		</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="{{ url('/') }}/store/phone">
+		<a class="nav-link" href="{{ url('/') }}/store#Phone">
 		<i class="fa fa-mobile"></i>
 		<span>Phone</span></a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="{{ url('/') }}/store/laptop">
+		<a class="nav-link" href="{{ url('/') }}/store#Laptop">
 		<i class="fa fa-laptop"></i>
 		<span>Laptop</span></a>
 	</li>

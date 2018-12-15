@@ -81,7 +81,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.compare').click(function() {
+	$('.btn-compare').click(function() {
 		var id = $(this).val();
 		$.ajax({
 			url: public_path + "/store/add-compare",

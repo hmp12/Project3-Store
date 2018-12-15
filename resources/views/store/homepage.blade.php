@@ -30,8 +30,8 @@
 <div class="products">
 
 	@foreach ($categories as $cate)
-		<div id="{{ $cate['url'] }}">
-			<h1>{{ $cate['name'] }}</h1>
+		<div id="{{ $cate->name }}">
+			<h1>{{ $cate->name }}</h1>
 		</div>
 		<div class="row">
 			@php
@@ -78,7 +78,7 @@
 									</div>
 								</div>
 							</a>
-							<button value="{{ $product['id'] }}" class="btn btn-info btn-lg">So sánh</button>	
+							<button value="{{ $product['id'] }}" class="btn btn-primary btn-lg btn-compare">So sánh</button>	
 						</div>
 					</div>				
 			@endforeach
