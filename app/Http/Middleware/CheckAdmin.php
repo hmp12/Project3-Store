@@ -14,8 +14,13 @@
         * @return mixed
         */
         public function handle($request, Closure $next) {
-            if (Auth::check() && Auth::user()->role_id == 1) {
-                return $next($request);
+            if (Auth::check()) {
+                if (Auth::user()->role_id == 1) {
+                    return $next($request);
+                }
+                else {
+                    return redirect('/store');
+                }
             }
             else {
                 return redirect('/login');
