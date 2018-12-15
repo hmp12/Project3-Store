@@ -6,7 +6,7 @@
 		<li class="breadcrumb-item active">Order</li>
 	</ol>
 	<div>
-		<button class="btn btn-success btn-lg" value="order" id="add"><i class="fa fa-plus"></i> Add</button>
+		<button class="btn btn-success btn-lg" value="order" id="add" style="display: none"><i class="fa fa-plus"></i> Add</button>
 		<button class="btn btn-primary btn-lg" id="reload"><i class="fa fa-sync-alt"></i> Reload</button>
 		<button class="btn btn-danger btn-lg" id="delete"><i class="fa fa-trash"></i> Delete</button>
 	</div>

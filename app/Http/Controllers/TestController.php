@@ -13,6 +13,8 @@
 
     class TestController extends Controller {
         public function index(Request $request) {
-            
+            $data = array();
+            $view = View::make("common.test", $data);
+            return $view;
         }
     }

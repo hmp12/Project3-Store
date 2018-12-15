@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 13, 2018 at 05:06 PM
+-- Generation Time: Dec 15, 2018 at 03:36 AM
 -- Server version: 5.6.37
 -- PHP Version: 7.1.8
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `parent_id` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -110,16 +110,25 @@ CREATE TABLE IF NOT EXISTS `order` (
   `user_id` int(11) NOT NULL,
   `address` varchar(100) NOT NULL,
   `total` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id`, `user_id`, `address`, `total`, `updated_at`, `created_at`) VALUES
-(11, 1, 'ha noi', 31280000, '2018-12-12 00:50:38', '2018-12-12 00:50:38');
+INSERT INTO `order` (`id`, `user_id`, `address`, `total`, `status`, `updated_at`, `created_at`) VALUES
+(1, 10, 'Ha Ba Trung', 22490000, 1, '2018-12-15 02:37:23', '2018-01-21 17:00:00'),
+(2, 10, 'Ha Ba Trung', 29990000, 1, '2018-12-15 02:37:23', '2018-02-21 17:00:00'),
+(3, 1, 'ha noi', 31280000, 1, '2018-12-14 08:56:44', '2018-03-12 00:50:38'),
+(4, 1, 'ha noi', 9990000, 1, '2018-12-14 08:56:44', '2018-04-12 00:50:38'),
+(11, 1, 'ha noi', 31280000, 1, '2018-12-14 08:56:44', '2018-12-12 00:50:38'),
+(12, 10, 'Ha Ba Trung', 29990000, 1, '2018-12-15 02:37:23', '2018-11-21 17:00:00'),
+(13, 10, 'HCM', 16990000, 1, '2018-12-15 03:30:19', '2018-10-21 17:00:00'),
+(14, 10, 'Hai Ba Trung', 8980000, 1, '2018-12-15 03:31:41', '2018-09-21 17:00:00'),
+(15, 1, 'Hai Ba Trung', 13990000, 1, '2018-12-15 03:31:41', '2018-09-21 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -134,15 +143,24 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `order_id` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order_detail`
 --
 
 INSERT INTO `order_detail` (`id`, `subproduct_id`, `quanlity`, `order_id`, `updated_at`, `created_at`) VALUES
+(1, 8, 1, 1, '2018-12-15 03:26:15', '2018-01-14 17:00:00'),
+(2, 6, 1, 2, '2018-12-15 03:27:13', '2018-02-14 17:00:00'),
+(12, 6, 1, 12, '2018-12-14 16:35:48', '0000-00-00 00:00:00'),
 (13, 1, 1, 11, '2018-12-12 00:50:38', '2018-12-12 00:50:38'),
-(14, 2, 1, 11, '2018-12-12 00:50:38', '2018-12-12 00:50:38');
+(14, 2, 1, 11, '2018-12-12 00:50:38', '2018-12-12 00:50:38'),
+(15, 1, 1, 3, '2018-12-15 03:28:27', '2018-03-12 00:50:38'),
+(16, 2, 1, 3, '2018-12-15 03:28:36', '2018-03-12 00:50:38'),
+(17, 17, 1, 13, '2018-12-15 03:28:27', '2018-10-12 00:50:38'),
+(18, 22, 2, 14, '2018-12-15 03:28:27', '2018-09-12 00:50:38'),
+(19, 10, 1, 15, '2018-12-15 03:28:27', '2018-09-12 00:50:38'),
+(20, 30, 1, 4, '2018-12-15 03:27:13', '2018-04-14 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -507,8 +525,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `remember_token`, `phone`, `password`, `role_id`, `address`, `gender`, `updated_at`, `created_at`) VALUES
-(1, 'HOANG MINH PHONG', 'root', 'test@test1.com', 'gnspqnpnn13tWQJVcBsiZUJ4CLHdbXAYAjy5SRINQIHbfezQMSHE66zOOO5q', 1629309669, '$2y$10$xSze.YgnDMyxj5CUdNEst.AeAsFu11N1R5GY9dH.p2Ykx5MFmlBnW', 1, 'Tran Dai Nghia', NULL, '2018-12-13 16:51:32', '2018-12-13 08:29:57'),
-(10, 'HOANG MINH PHONG', 'test', 'phongpt97@gmail.com1', NULL, NULL, '$2y$10$7cWsK88bemT/loGzlHFC6eJNDuWayCW5xZQoliHt3aRThco42/m.u', 0, NULL, NULL, '2018-12-13 16:52:04', '2018-12-13 08:36:06');
+(1, 'HOANG MINH PHONG', 'root', 'test@test1.com', 'ZTsn9tVZIF9wZrnesgLai5ZZNbfn4Zi7JdwQdQrE054jCiAY0eqUPv9Vtwqr', 1629309669, '$2y$10$xSze.YgnDMyxj5CUdNEst.AeAsFu11N1R5GY9dH.p2Ykx5MFmlBnW', 1, 'Tran Dai Nghia', NULL, '2018-12-14 15:53:23', '2018-12-13 08:29:57'),
+(10, 'HOANG MINH PHU', 'test1', 'phongpt97@gmail.com', NULL, NULL, '$2y$10$7cWsK88bemT/loGzlHFC6eJNDuWayCW5xZQoliHt3aRThco42/m.u', 1, NULL, NULL, '2018-12-14 07:58:49', '2018-12-13 08:36:06');
 
 --
 -- Indexes for dumped tables
@@ -600,17 +618,17 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `photo`
 --

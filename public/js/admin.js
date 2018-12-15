@@ -7,6 +7,50 @@ $(document).ready(function() {
 
 	$('#table').DataTable();
 
+	if ($("#revenueChart").length) {
+		var ctx = $("#revenueChart");
+		var revenueChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+				datasets: [{
+					label: 'million dong',
+					data: revenue,
+					backgroundColor: "rgba(2,117,216,0.2)",
+					borderColor: "rgba(2,117,216,1)",
+					borderWidth: 1,
+					pointRadius: 5,
+					pointBackgroundColor: "rgba(2,117,216,1)",
+					pointBorderColor: "rgba(255,255,255,0.8)",
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: "rgba(2,117,216,1)",
+					pointHitRadius: 50,
+					pointBorderWidth: 2,
+				}]
+			},
+			options: {
+				scales: {
+					xAxes: [{
+						time: {
+						unit: 'date'
+						},
+						gridLines: {
+						display: false
+						},
+						ticks: {
+						maxTicksLimit: 7
+						}
+					}],
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
+		});
+	}
+
 	$('#url').focus(function() {
 		$(this).val($('#title').val().trim().toLowerCase().replace(/ /g, '-'));
 	});
@@ -174,4 +218,6 @@ $(document).ready(function() {
 	$('.close').click(function() {
 		$('.modal').hide();
 	});
+
+	
 });
