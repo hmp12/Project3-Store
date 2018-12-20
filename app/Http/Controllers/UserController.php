@@ -51,6 +51,12 @@
                     $valid = False;
                     $usernameError = "Username is empty";
                 }
+                else {
+                    if (User::where('username', $username)->exists()) {
+                        $valid = False;
+                        $usernameError = "Username have already exist";
+                    }
+                }
 
                 if (empty($email)) {
                     $valid = False;

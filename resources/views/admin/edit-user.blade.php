@@ -31,7 +31,7 @@
 				<p>Username <span class="error">{{ (isset($usernameError)) ? $usernameError : '' }}</p>
 				<input type="text" class="form-control" name="username" value="{{ (isset($username)) ? $username : '' }}" placeholder="Type username in here" class="text" id="username">
 				<p>Email <span class="error">{{ (isset($emailError)) ? $emailError : '' }}</p>
-				<input type="text" class="form-control" name="email" value="{{ (isset($email)) ? $email : '' }}" placeholder="Type email in here" class="text" id="email">
+				<input type="email" class="form-control" name="email" value="{{ (isset($email)) ? $email : '' }}" placeholder="Type email in here" class="text" id="email">
 				<p>Role</p>
 				<select name="role" class="form-control">
 					<option value="0" disabled selected hidden>Choose role here</option>

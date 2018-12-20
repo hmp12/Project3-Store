@@ -12,14 +12,14 @@
 		<h4>Order ID: {{ $orderDetails[0]->order->id }}</h4>
 		<div class="row">
 			<div class="col-3">
-				<p>User: {{ $orderDetails[0]->order->user->username }}</p>
-				<p>Name: {{ $orderDetails[0]->order->user->name }}</p>
-				<p>Email: {{ $orderDetails[0]->order->user->email }}</p>
+				<p>User: {{ empty($orderDetails[0]->order->user) ? 'deleted' : $orderDetails[0]->order->user->username }}</p>
+				<p>Name: {{ empty($orderDetails[0]->order->user) ? 'deleted' : $orderDetails[0]->order->user->name }}</p>
+				<p>Email: {{ empty($orderDetails[0]->order->user) ? 'deleted' : $orderDetails[0]->order->user->email }}</p>
 			</div>
 			<div class="col-3">
 				<p>Shipping Address: {{ $orderDetails[0]->order->address }}</p>
-				<p>Bill Address: {{ $orderDetails[0]->order->user->address }}</p>
-				<p>Phone: {{ $orderDetails[0]->order->user->phone }}</p>
+				<p>Bill Address: {{ empty($orderDetails[0]->order->user) ? 'deleted' : $orderDetails[0]->order->user->address }}</p>
+				<p>Phone: {{ empty($orderDetails[0]->order->user) ? 'deleted' : $orderDetails[0]->order->user->phone }}</p>
 			</div>
 			<div class="col-5">
 				<form action="" enctype="multipart/form-data" method="post">

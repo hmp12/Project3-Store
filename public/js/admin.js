@@ -123,7 +123,7 @@ $(document).ready(function() {
 
 	//$('.delete').click(function() {
 	$('tbody').on('click', '.delete', function () {
-		$confirm = confirm("Are you sure to delete this " + tab + "?");
+		$confirm = confirm("Are you sure to delete this " + $('#add').val() + "?");
 		if ($confirm) {
 			var id = [];
 			id = $(this).val();

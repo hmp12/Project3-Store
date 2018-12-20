@@ -8,7 +8,7 @@
     use App\Models\Cart;
     use App\Models\User;
 
-
+    use Auth;
     use View;
 
     class PaymentController extends Controller {

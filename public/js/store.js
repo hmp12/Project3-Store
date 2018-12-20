@@ -29,6 +29,7 @@ $(document).ready(function() {
 				address: address
 			},
 			success: function(data) {
+				console.log(data);
 				if (data == '1') {
 					$('.modal-body').html('<h1>Thanh toán thành công</h1>');
 					$('.modal-footer').remove();

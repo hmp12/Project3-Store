@@ -30,7 +30,7 @@
 					<td>{{ $user->username }}</td>
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->email }}</td>
-					<td>{{ $user->role_id }}</td>
+					<td>{{ $user->role->title }}</td>
 					<td>
 						<button value="{{ $user->id }}" class="btn btn-primary btn-sm edit"><i class="fa fa-edit"></i></button>
 						<button value="{{ $user->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></button>
